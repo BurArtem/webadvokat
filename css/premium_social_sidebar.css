@@ -1,0 +1,46 @@
+/* ==========================================================================
+   SOCIAL BOTTOM BAR (HERO SECTION)
+   ========================================================================== */
+.social-bottom-bar {
+  position: absolute;
+  bottom: 40px;
+  right: 50px;
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  z-index: 100;
+  align-items: center;
+}
+
+.social-bottom-bar a {
+  display: block;
+  transition: transform 0.3s ease;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.social-bottom-bar a:hover {
+  transform: translateY(-5px);
+  color: #b68a52; /* Gold/Bronze accent color */
+}
+
+.social-bottom-bar svg {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+/* Decoration line to the right of the icons (optional, maybe not needed for bottom) 
+   Let's keep it simple as requested "icons not just circles" */
+
+@media (max-width: 1300px) {
+    .social-bottom-bar {
+        right: 30px;
+        bottom: 30px;
+    }
+}
+
+@media (max-width: 991px) {
+  .social-bottom-bar {
+    display: none;
+  }
+}

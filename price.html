@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html data-qb-installed="true" lang="ru">
+<head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<title>Бурьянский и партнеры адвокатское бюро</title>
+	<link href="img/scales.png" rel="shortcut icon" type="image/png" />
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+	<link href="slick/slick.css" rel="stylesheet" type="text/css" />
+	<link href="slick/slick-theme.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/lightbox.css" rel="stylesheet" />
+	<link href="css/magnific-popup.css" rel="stylesheet" />
+	<link href="css/style.min.css" rel="stylesheet" /><!-- Global site tag (gtag.js) - Google Analytics --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-ZDPWXH067Z"></script><script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZDPWXH067Z');
+    </script>
+	<style type="text/css">.lf-progress {
+  -webkit-appearance: none;
+  -moz-apperance: none;
+  width: 100%;
+  /* margin: 0 10px; */
+  height: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.lf-progress:focus {
+  outline: none;
+  border: none;
+}
+.lf-progress::-moz-range-track {
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+.lf-progress::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-moz-range-thumb {
+  -moz-appearance: none !important;
+  height: 13px;
+  width: 13px;
+  border: 0;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.lf-progress::-ms-fill-lower {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-fill-upper {
+  background: #ccc;
+  border-radius: 3px;
+}
+.lf-progress::-ms-thumb {
+  border: 0;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background: #0fccce;
+  cursor: pointer;
+}
+.lf-progress:focus::-ms-fill-lower {
+  background: #ccc;
+}
+.lf-progress:focus::-ms-fill-upper {
+  background: #ccc;
+}
+.lf-player-container :focus {
+  outline: 0;
+}
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-player-btn-container {
+  display: flex;
+  align-items: center;
+}
+.lf-player-btn {
+  cursor: pointer;
+  fill: #999;
+  width: 14px;
+}
+
+.lf-player-btn.active {
+  fill: #555;
+}
+
+.lf-popover {
+  position: relative;
+}
+
+.lf-popover-content {
+  display: inline-block;
+  position: absolute;
+  background-color: #ffffff;
+  opacity: 1;
+
+  transform: translate(0, -10px);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: all 0.3s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  padding: 10px;
+}
+
+.lf-popover-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, 0px);
+}
+
+.lf-arrow {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  bottom: -9px;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+}
+
+.lf-left-align,
+.lf-left-align .lfarrow {
+  left: 0;
+  right: unset;
+}
+
+.lf-right-align,
+.lf-right-align .lf-arrow {
+  right: 0;
+  left: unset;
+}
+
+.lf-text-input {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 3px;
+  width: 60px;
+  margin: 0;
+}
+
+.lf-color-picker {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.lf-color-selectors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.lf-color-component {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lf-color-component strong {
+  width: 40px;
+}
+
+.lf-color-component input[type='range'] {
+  margin: 0 0 0 10px;
+}
+
+.lf-color-component input[type='number'] {
+  width: 50px;
+  margin: 0 0 0 10px;
+}
+
+.lf-color-preview {
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 5px;
+}
+
+.lf-preview {
+  height: 60px;
+  width: 60px;
+}
+
+.lf-popover-snapshot {
+  width: 150px;
+}
+.lf-popover-snapshot h5 {
+  margin: 5px 0 10px 0;
+  font-size: 0.75rem;
+}
+.lf-popover-snapshot a {
+  display: block;
+  text-decoration: none;
+}
+.lf-popover-snapshot a:before {
+  content: '⥼';
+  margin-right: 5px;
+}
+.lf-popover-snapshot .lf-note {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+.lf-player-controls > div {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lf-player-controls > div:first-child {
+  margin-left: 0px;
+}
+.lf-player-controls > div:last-child {
+  margin-right: 0px;
+}
+	</style>
+</head>
+<body class="body price template" data-gramm="false" data-qb-tmp-id="lt-247691"><!-- Меню -->
+<header class="header">
+<div class="container-fluid" style="z-index: 999999;"><!-- Меню на большом екране -->
+<div class="container-fluid d-none d-md-block">
+<nav class="navbar navbar-expand-md navbar-dark col-12">
+<div class="container d-none d-lg-block">
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="navbar-brand col-lg-2 col-md-1" href="#"><img alt="Buriansky and partners" src="img/scales.png" /></div>
+
+<div class="navbar-nav"><a class="nav-item nav-link" href="index_ru.html">Главная</a> <a class="nav-item nav-link" href="about.html">О бюро</a> <a class="nav-item nav-link" href="services.html">Услуги</a> <a class="nav-item nav-link active" href="price.html">Прайс</a> <a class="nav-item nav-link" href="experience.html">Опыт</a> <!-- <a class="nav-item nav-link" href="Публикации.html">Публикации</a> --> <a class="nav-item nav-link" href="index_ru.html#footer">Контакты</a></div>
+</div>
+</div>
+
+<div class="container-fluid d-block d-lg-none">
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<div class="navbar-brand col-lg-2 col-md-1" href="#"><img alt="Buriansky and partners" src="img/scales.png" /></div>
+
+<div class="navbar-nav"><a class="nav-item nav-link" href="index_ru.html">Главная</a> <a class="nav-item nav-link" href="about.html">О бюро</a> <a class="nav-item nav-link" href="services.html">Услуги</a> <a class="nav-item nav-link active" href="price.html">Прайс</a> <a class="nav-item nav-link" href="experience.html">Опыт</a> <!-- <a class="nav-item nav-link" href="Публикации.html">Публикации</a> --> <a class="nav-item nav-link" href="index_ru.html#footer">Контакты</a></div>
+</div>
+</div>
+</nav>
+</div>
+<!-- Меню на маленьком экране -->
+
+<div class="container container_top col-12 d-block d-md-none">
+<div class="row">
+<nav class="navbar navbar-expand-md navbar-dark col-12"><a class="navbar-brand" href="#"><img alt="Buriansky and partners" class="d-none d-md-block" src="img/Logo.png" /> <img alt="Buriansky and partners" class="d-block d-md-none" src="img/scales.png" /> </a><button aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button"></button>
+
+<div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+<div class="navbar-nav"><a class="nav-item nav-link" href="index_ru.html">Главная <span class="sr-only">(current)</span></a> <a class="nav-item nav-link" href="about.html">О бюро</a> <a class="nav-item nav-link" href="services.html">Услуги</a> <a class="nav-item nav-link active" href="price.html">Прайс</a> <a class="nav-item nav-link" href="experience.html">Опыт</a> <!-- <a class="nav-item nav-link" href="Публикации.html">Публикации</a> --> <a class="nav-item nav-link" href="index_ru.html#footer">Контакты</a></div>
+</div>
+</nav>
+</div>
+</div>
+</div>
+</header>
+
+<main><!-- Фон стекстом после меню и блок с партнерами -->
+<div class="container-fluid p-0">
+<div class="first_img">
+<div class="container">
+<h1>ПРАЙС</h1>
+
+<p>Наша миссия &ndash; оказывать качественную правовую помощь клиенту в решении возникающих вопросов с максимально позитивным для клиента результатом.</p>
+</div>
+</div>
+
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<h2></h2>
+
+<p>Вы можете быть уверены, что защитой ваших интересов будет осуществлять профессионал и мастер своего дела, который грамотно выстроит линию защиты и сделает все возможное, чтобы обеспечить реализацию Ваших прав, свобод и законных интересов и недопущения их нарушений, а также направит все силы на содействие их восстановлению в случае нарушения. Помните, участие опытного адвоката в решении дела существенно увеличивает шансы на успех. Выбирайте для себя только адвоката, который имеет высокую квалификацию и большой опыт в интересующем Вас деле, его репутация безупречна, а клиенты его рекомендуют. Расценки на юридические услуги в прайс &ndash; листе являются ориентировочными. Возможны разные варианты: оплата по часам; оплата за выход в суд; оплата за результат; оплата за абонентское обслуживание; вознаграждение за успех. Если у Вас возникли вопросы по поводу услуг, формирования цены на услуги, либо какие-то другие вопросы, Вы можете всегда их задать воспользовавшись формой обратной связи или другим удобным для Вас способом воспользовавшись разделом &laquo;Контакты&raquo;.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="container">
+<table>
+	<tbody>
+		<tr>
+			<td>Услуга</td>
+			<td>Цена(грн)</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Консультации устные в офисе адвоката (до 30 мин)</p>
+			</td>
+			<td>
+			<p>1000 - 2000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Письменная юридическая консультация</p>
+			</td>
+			<td>
+			<p>1500 &ndash; 4000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Адвокатский запрос</p>
+			</td>
+			<td>
+			<p>4000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Составление, юридическая экспертиза всех видов договоров</p>
+			</td>
+			<td>
+			<p>1500 &ndash; 5000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Составление исковых заявлений, других документов процессуального характера, заявлений приказного и отдельного производства, возражений, претензий, ходатайств и т.д.</p>
+			</td>
+			<td>
+			<p>6000 &ndash; 20000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Составление апелляционных (кассационных) жалоб</p>
+			</td>
+			<td>
+			<p>8000 &ndash; 15000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Юридическое сопровождение сделок</p>
+			</td>
+			<td>
+			<p>8000 &ndash; 15000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Проверка недвижимости перед покупкой</p>
+			</td>
+			<td>
+			<p>8000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Ознакомление и изучение материалов дела без посещения суда</p>
+			</td>
+			<td>
+			<p>от 3000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Ознакомление и изучение материалов дела с посещением суда (г. Днепр)</p>
+			</td>
+			<td>
+			<p>4000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Представление интересов клиента по гражданскому, административному делу &ndash; за одно судебное заседание (г. Днепр)</p>
+			</td>
+			<td>
+			<p>4000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Представление интересов клиента по уголовному, хозяйственному делу &ndash; за одно судебное заседание (г. Днепр)</p>
+			</td>
+			<td>
+			<p>5000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Представление интересов клиента в суде за выезд адвоката по Днепропетровской области (за одно судебное заседание)</p>
+			</td>
+			<td>
+			<p>По договоренности</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Представление интересов клиента в суде за выезд адвоката по Украине (за одно судебное заседание)</p>
+			</td>
+			<td>
+			<p>По договоренности</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Комплексное ведение дела в суде первой инстанции: гражданские, административные дела;<br />
+			+ отдельная оплата за выход адвоката в каждое судебное заседание</p>
+			</td>
+			<td>
+			<p>10000-40000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Комплексное ведение дела в суде первой инстанции: хозяйственные дела;<br />
+			+ отдельная оплата за выход адвоката в каждое судебное заседание</p>
+			</td>
+			<td>
+			<p>20000-100000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Криминальноє дело</p>
+			</td>
+			<td>
+			<p>от 40000</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Другие услуги</p>
+			</td>
+			<td>
+			<p>По договоренности</p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="price_text">
+<p>Оплата производится во всех случаях официально на расчетный счет Адвокатского бюро.<br />
+<br />
+Обращаем Ваше внимание, что действующим процессуальным законодательством Украины предусмотрено взыскание с оппонента (ответчика или истца) судебных издержек в число которых входит и затраты на оплату гонорара адвоката (размер возмещения определяется непосредственно судом в случае выигрыша дела как правило при вынесении решения суда).<br />
+<br />
+Фиксированная часть гонорара оплачивается при заключении договора с адвокатом. Оплата за посещение заседаний &ndash; не позднее, чем за 3 дня до очередного судебного заседания.</p>
+</div>
+</div>
+</main>
+
+<footer class="footer" id="footer">
+<div class="container">
+<div class="row"><iframe allowfullscreen="" aria-hidden="false" class="col-lg-7 offset-md-1" frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2645.124949410689!2d35.038979422219185!3d48.47331687817822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2ee1f4cf4b7%3A0xae7d6b29f7c9d449!2z0JDQtNCy0L7QutCw0YLRgdC60L7QtSDQkdGO0YDQviAi0JHRg9GA0YzRj9C90YHQutC40Lkg0Lgg0L_QsNGA0YLQvdC10YDRiyI!5e0!3m2!1sru!2sua!4v1592106551869!5m2!1sru!2sua" style="border:0;" tabindex="0" width="600"></iframe>
+
+<div class="footer_content col-lg-4">
+<div class="contact">
+<h2>Контакты:</h2>
+
+<p>Телефон: +38-050-458-73-63</p>
+
+<p>Почта: <a href="index_ru.html#sixth_section">mail@webadvokat.com.ua</a></p>
+
+<p><img alt="" src="img/location.png" /> 49000, г.Днепр,<br />
+ул. Сичеславская Набережная, 16/23</p>
+</div>
+
+<h2>Мы в соц сетях:</h2>
+
+<div class="social_network">
+<div class="social_network_link"><img alt="" src="img/Facebook.png" /> <a href="https://www.facebook.com/LawOfficeBuryanskyandpartners/"> </a>
+
+<p><a href="https://www.facebook.com/LawOfficeBuryanskyandpartners/">Facebook</a></p>
+<a href="https://www.facebook.com/LawOfficeBuryanskyandpartners/"> </a></div>
+
+<div class="social_network_link"><img alt="" src="img/Viber.png" /> <a href="https://viber.click/380504587363"> </a>
+
+<p><a href="https://viber.click/380504587363">Viber</a></p>
+<a href="https://viber.click/380504587363"> </a></div>
+
+<div class="social_network_link"><img alt="" src="img/telegram.png" /> <a href="https://t.me/BurianskyiAndrii"> </a>
+
+<p><a href="https://t.me/BurianskyiAndrii">Telegram</a></p>
+<a href="https://t.me/BurianskyiAndrii"> </a></div>
+
+<div class="social_network_link"><img alt="" src="img/WhatsApp.png" /> <a href="https://api.whatsapp.com/send/?phone=380504587363&amp;text&amp;app_absent=0"> </a>
+
+<p><a href="https://api.whatsapp.com/send/?phone=380504587363&amp;text&amp;app_absent=0">WhatsApp</a></p>
+<a href="https://api.whatsapp.com/send/?phone=380504587363&amp;text&amp;app_absent=0"> </a></div>
+</div>
+</div>
+
+<div class="footer_logo col-sm-2 col-4"><img alt="Бурьянский и партнеры" src="img//logo_footer.png" /></div>
+
+<div class="footer_line col-lg-8 col-md-7 col-sm-6 col-4">
+<hr /></div>
+
+<div class="language_links col-md-2 col-sm-3 col-4"><a class="active" href="index_ru.html">RU</a>
+
+<p>/</p>
+<a href="index.html">UK</a>
+
+<p>/</p>
+<a href="index_en.html">EN</a></div>
+</div>
+</div>
+</footer>
+<script crossorigin="anonymous" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" src="https://code.jquery.com/jquery-3.5.1.slim.min.js" type="text/javascript">
+</script><script crossorigin="anonymous" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js">
+</script><script crossorigin="anonymous" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
+</script><script src="slick/slick.min.js"></script><script src="js/lightbox.js" type="text/javascript"></script><script src="js/jquery.magnific-popup.min.js" type="text/javascript"></script><script src="js/main.js" type="text/javascript"></script></body>
+</html>

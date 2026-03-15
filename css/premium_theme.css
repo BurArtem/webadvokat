@@ -1,0 +1,1335 @@
+/* Premium Law Firm Theme - Overrides minified bootstrap & old styles */
+
+:root {
+  --bg-primary: #2a2a2a;
+  --bg-secondary: #333333;
+  --accent: #b68a52;
+  /* Gold/Bronze */
+  --accent-hover: #d4a568;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-text: 'Montserrat', sans-serif;
+
+  --spacing-section: 120px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-text);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-muted);
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   HEADER & NAVBAR
+   ========================================================================== */
+.header {
+  position: relative;
+  width: 100%;
+  background: none;
+  /* override old inline backgrounds */
+}
+
+/* Base navbar */
+.navbar {
+  padding: 1.5rem 0;
+  transition: all 0.4s ease;
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Fixed/Sticky Navbar (Glassmorphism) */
+.fixed_menu .navbar {
+  background-color: rgba(17, 17, 17, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-brand img {
+  height: auto;
+  transition: 0.3s ease;
+}
+
+/* Link overrides */
+.navbar-dark .navbar-nav .nav-link {
+  color: var(--text-main) !important;
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0.4rem;
+  padding: 0.5rem 0.2rem;
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--accent) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover::after,
+.navbar-dark .navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Language Switcher */
+.language_links a {
+  color: var(--text-muted);
+  font-weight: 600;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.language_links a:hover,
+.language_links a.active {
+  color: var(--accent);
+}
+
+.language_links p,
+.language_links span {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.premium-lang-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   PREMIUM TYPOGRAPHIC LOGO (SVG + Text)
+   ========================================================================== */
+.premium-logo {
+  display: inline-flex !important;
+  align-items: center;
+  text-decoration: none !important;
+  color: var(--text-main);
+  transition: all 0.3s ease;
+  padding: 0;
+  margin-right: 2rem;
+  flex: 0 0 auto;
+  max-width: fit-content;
+}
+
+/* Premium Sticky Header */
+.premium-sticky-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1140px;
+  z-index: 99999;
+  background-color: transparent;
+  transition: all 0.4s ease;
+  padding: 10px 15px;
+  border-radius: 0 0 20px 20px;
+}
+
+.premium-sticky-menu.scrolled {
+  background-color: rgba(42, 42, 42, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+}
+
+.premium-logo:hover .premium-logo-title {
+  color: var(--text-main);
+}
+
+.premium-logo-icon {
+  margin-right: 12px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.premium-logo-icon img {
+  width: 56px !important;
+  max-width: 56px !important;
+  min-width: 56px !important;
+  height: auto;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.premium-logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.premium-logo-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  color: var(--text-main);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.premium-logo-title span {
+  color: var(--accent);
+}
+
+.premium-logo-subtitle {
+  font-family: var(--font-text);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Scrolled State (Sticky Header) */
+.fixed_menu .navbar .premium-logo-icon img,
+.premium-sticky-menu.scrolled .premium-logo-icon img {
+  width: 40px;
+}
+
+.fixed_menu .navbar .premium-logo-title,
+.premium-sticky-menu.scrolled .premium-logo-title {
+  font-size: 1.1rem;
+}
+
+.fixed_menu .navbar .premium-logo-subtitle,
+.premium-sticky-menu.scrolled .premium-logo-subtitle {
+  display: none;
+}
+
+/* Mobile Screen Adaptation */
+@media (max-width: 1199px) {
+  .premium-logo-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .premium-logo {
+    margin-right: 0;
+  }
+
+  .premium-logo-icon img {
+    width: 42px;
+  }
+
+  .premium-logo-title {
+    font-size: 1rem;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .premium-logo-subtitle {
+    display: none;
+    /* Hide subtitle completely on mobile */
+  }
+}
+
+/* Footer Adaptation */
+.premium-logo-footer {
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .premium-logo-footer {
+    justify-content: flex-start;
+  }
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.first_section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-image:
+    linear-gradient(to right, rgba(17, 17, 17, 0.97) 0%, rgba(17, 17, 17, 0.75) 50%, rgba(17, 17, 17, 0.45) 100%),
+    url('../img/Work.jpg');
+  background-size: cover;
+  background-position: center center;
+  margin-top: 0;
+  /* no negative margin — header now uses flexbox */
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+
+.first_section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.first_title {
+  text-align: left !important;
+  max-width: 800px;
+  margin: 0 !important;
+}
+
+.first_title h1 {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Trust Bar */
+.trust-bar {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(182, 138, 82, 0.3);
+  border-bottom: 1px solid rgba(182, 138, 82, 0.3);
+  max-width: max-content;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.trust-item .number {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--accent);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.trust-item .label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* Button */
+.btn-premium {
+  background-color: var(--accent);
+  color: #fff !important;
+  font-family: var(--font-text);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 1.2rem 3rem;
+  border-radius: 0;
+  border: none;
+  font-size: 1.1rem;
+  transition: all 0.4s ease;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(182, 138, 82, 0.2);
+}
+
+.btn-premium:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(182, 138, 82, 0.3);
+}
+
+/* Hide old hero elements that don't fit the premium look */
+.first_section .line,
+.first_section .expiriense {
+  display: none !important;
+}
+
+.scrolling {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.scrolling:hover {
+  opacity: 1;
+}
+
+.scrolling p {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+/* ==========================================================================
+   UTILITY Overrides
+   ========================================================================== */
+.section {
+  padding-top: var(--spacing-section) !important;
+  padding-bottom: var(--spacing-section) !important;
+}
+
+.section_text h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section_text h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1rem auto 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+  .first_section {
+    padding-top: 200px;
+    background-image:
+      linear-gradient(to right, rgba(17, 17, 17, 0.95) 0%, rgba(17, 17, 17, 0.85) 100%),
+      url('../img/Work.jpg');
+  }
+
+  .first_title h1 {
+    font-size: 2.5rem;
+  }
+
+  .trust-bar {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .trust-item .number {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+/* ==========================================================================
+   SECTION 3: ОБЛАСТІ ПРАКТИКИ (SERVICES GRID)
+   ========================================================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.service-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3rem 2rem;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-decoration: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(182, 138, 82, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon {
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.service-icon svg {
+  width: 48px;
+  height: 48px;
+  stroke-width: 1.5;
+}
+
+.service-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.service-card:hover .service-content h3 {
+  color: var(--accent);
+}
+
+.service-link {
+  font-family: var(--font-text);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-top: auto;
+  transition: 0.3s;
+}
+
+.service-card:hover .service-link {
+  color: var(--text-main);
+  letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   SECTION 4: ЧОМУ МИ? (FEATURES GRID)
+   ========================================================================== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  border-color: rgba(182, 138, 82, 0.3);
+  transform: translateY(-5px);
+  background-color: rgba(182, 138, 82, 0.05);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+}
+
+.feature-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.5;
+}
+
+.feature-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   SECTION 5: ВІДГУКИ (REVIEWS GRID)
+   ========================================================================== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.review-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem;
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(182, 138, 82, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.review-card::after {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  color: rgba(182, 138, 82, 0.05);
+  line-height: 1;
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent);
+  padding: 2px;
+}
+
+.review-author {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.review-stars {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.review-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   SECTION 6: CONTACT FORM (FLOATING LABELS)
+   ========================================================================== */
+.premium-form {
+  background: var(--bg-secondary);
+  padding: 3rem;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-floating {
+  position: relative;
+}
+
+.form-floating .form-control {
+  height: calc(3.5rem + 2px);
+  padding: 1rem 1rem;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-main);
+  border-radius: 0;
+  transition: border-color 0.3s;
+}
+
+.form-floating .form-control:focus {
+  border-color: var(--accent);
+  box-shadow: none;
+  background-color: transparent;
+}
+
+.form-floating textarea.form-control {
+  height: auto;
+  min-height: 150px;
+}
+
+.form-floating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem 1rem;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+  color: var(--text-muted);
+}
+
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+  opacity: 1;
+  color: var(--accent);
+  transform: scale(.85) translateY(-1rem) translateX(0.15rem);
+  background-color: var(--bg-secondary);
+  height: auto;
+  padding: 0 0.5rem;
+}
+
+.privacy-link {
+  color: var(--text-muted);
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.privacy-link:hover {
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   SECTION 7: FOOTER
+   ========================================================================== */
+.premium-footer {
+  background-color: #0b0b0b;
+  padding: 5rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-logo {
+  max-width: 250px;
+  height: auto;
+  filter: brightness(0) invert(1) opacity(0.8);
+}
+
+.premium-lang {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.premium-lang a {
+  color: var(--text-muted);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.premium-lang a:hover,
+.premium-lang a.active {
+  color: var(--accent);
+}
+
+.premium-lang span {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-heading {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--accent);
+}
+
+.footer-text {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-text a {
+  color: var(--text-muted);
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  color: var(--accent);
+}
+
+.social-links-premium {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.social-icon {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  text-decoration: none !important;
+  border-radius: 4px;
+}
+
+.social-icon:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(182, 138, 82, 0.05);
+}
+
+.map-wrapper {
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  height: 100%;
+  min-height: 400px;
+  filter: grayscale(80%) invert(10%) contrast(150%) hue-rotate(180deg);
+  transition: filter 0.5s ease;
+}
+
+.map-wrapper:hover {
+  filter: grayscale(0%) invert(0%);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  display: block;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.copyright-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0;
+}
+
+/* ==========================================================================
+   ADVANCED INTERACTIVITY & POLISH
+   ========================================================================== */
+
+/* Custom Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Premium Image Hover Effects */
+.premium-image-wrapper {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.premium-img-effect,
+.premium-image {
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+}
+
+.premium-image-wrapper:hover .premium-img-effect,
+.premium-image-wrapper:hover .premium-image {
+  transform: scale(1.05);
+}
+
+/* Premium Fullscreen Mobile Menu (Overrides Bootstrap default dropdown) */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(17, 17, 17, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* When the toggle button is clicked, collapse gets .show class */
+  .navbar-collapse.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navbar-dark .navbar-nav {
+    align-items: center;
+    width: 100%;
+  }
+
+  .navbar-dark .navbar-nav .nav-link {
+    font-size: 1.8rem !important;
+    margin: 1.5rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+  }
+
+  .navbar-collapse.show .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Stagger the appearance of menu items */
+  .navbar-collapse.show .nav-item:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(5) {
+    transition-delay: 0.3s;
+  }
+
+  .navbar-collapse.show .nav-item:nth-child(6) {
+    transition-delay: 0.35s;
+  }
+
+  /* Toggler button needs to be on top to close the menu */
+  .navbar-toggler {
+    z-index: 100001;
+    position: relative;
+    border: none;
+    outline: none !important;
+  }
+}
+
+/* --- HERO SECTION REDESIGN --- */
+.header {
+  background-image: url('../img/premium_bg.png') !important;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(20, 22, 28, 0.95) 0%, rgba(20, 22, 28, 0.6) 50%, rgba(20, 22, 28, 0.2) 100%);
+  z-index: 0;
+}
+
+.header .container-fluid,
+.header .container {
+  position: relative;
+  z-index: 1;
+  /* Content above overlay */
+}
+
+/* Fluid Typography for Hero Title */
+.header .first_section .first_title h1 {
+  font-family: var(--font-heading) !important;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+/* Trust Bar inside Hero */
+/* Trust Bar - defined once, responsive styles in responsive.css */
+.trust-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 2rem 0 2.5rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(182, 138, 82, 0.3);
+  border-bottom: 1px solid rgba(182, 138, 82, 0.3);
+  max-width: max-content;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.trust-item .number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.trust-item .label {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Gold Premium Button in Hero */
+.header .first_section .communication_button a {
+  background: linear-gradient(135deg, var(--accent) 0%, #d4af37 100%);
+  border: none !important;
+  color: #111 !important;
+  font-weight: 700 !important;
+  font-size: clamp(1rem, 1.5vw, 1.2rem) !important;
+  padding: 15px 40px !important;
+  border-radius: 4px;
+  width: max-content !important;
+  min-width: 250px;
+  display: inline-flex !important;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(182, 138, 82, 0.3);
+  transition: all 0.3s ease;
+}
+
+.header .first_section .communication_button a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(182, 138, 82, 0.5);
+  color: #000 !important;
+}
+
+@media (max-width: 576px) {
+  .trust-bar {
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   GLOBAL MOBILE RESPONSIVENESS & FLUID TYPOGRAPHY
+   ========================================================================== */
+
+/* Fluid Layout Paddings */
+.section {
+  padding: clamp(40px, 8vw, 80px) 15px !important;
+}
+
+/* Fluid Premium Headings */
+.premium-heading {
+  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  margin-bottom: clamp(20px, 4vw, 40px) !important;
+}
+
+.feature-title {
+  font-size: clamp(1.2rem, 2vw, 1.5rem) !important;
+}
+
+/* Responsive Grids */
+@media (max-width: 768px) {
+
+  .services-grid,
+  .why-us-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .who_are_we_images {
+    margin-top: 3rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+
+  /* Force single column on mobile to prevent squeezing */
+  .services-grid,
+  .why-us-grid,
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .who_are_we_text p,
+  .section_text p {
+    font-size: 1rem !important;
+    line-height: 1.6;
+  }
+
+  /* Footer Mobile Alignment */
+  .premium-footer {
+    text-align: center;
+  }
+
+  .footer-contact-info {
+    text-align: center;
+  }
+
+  .social-links-premium {
+    justify-content: center;
+  }
+
+  .language_links.premium-lang {
+    justify-content: center !important;
+    margin-top: 20px;
+  }
+}
+
+/* Ensure Logo Scales Smoothly on Mobile */
+@media (max-width: 480px) {
+  .premium-logo-title {
+    font-size: 1.2rem;
+  }
+
+  .premium-logo-icon img {
+    width: 45px;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .navbar-expand-md .navbar-nav {
+    flex-direction: row;
+  }
+}
+
+
+
+/* FIX HEADER DISPLAY AND LANG SWITCHER */
+.navbar {
+  display: flex;
+  flex-wrap: nowrap !important;
+  align-items: center;
+}
+
+.header {
+  position: relative;
+  /* ensure it stays sticky fixed */
+  z-index: 100000;
+}
+
+.premium-sticky-menu {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 5%;
+  padding-right: 5%;
+  z-index: 999999 !important;
+}
+
+/* Ensure brand and language toggles are always arranged correctly */
+.navbar-brand {
+  margin-right: auto !important;
+}
+
+.premium-lang-header {
+  margin-left: 20px !important;
+}
+
+.language_links.premium-lang-header {
+  align-items: center;
+}
+
+.navbar-collapse {
+  flex-grow: 1;
+}
+
+
+/* Language switcher strictly top right */
+/* navbar-collapse flex fix for desktop */
+.navbar-collapse {
+  flex-grow: 1;
+}
+
+/* Force strict alignment of the language block on desktop */
+.language_links.premium-lang-header {
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center;
+  position: static !important;
+  transform: none !important;
+  padding-left: 20px;
+}
+
+/* Desktop: nav links aligned right */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    justify-content: flex-end !important;
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .navbar-nav {
+    margin-left: auto;
+  }
+}
+
+
+/* ---- HERO SECTION: handled by responsive.css ---- */
+/* (duplicate rules removed to avoid conflicts) */
+
+/* =================================================================
+   FINAL OVERRIDES — highest priority, loaded last
+   Fixes: navbar squeeze at 992-1199px and duplicate lang switcher
+   ================================================================= */
+
+/* 1. NAVBAR SQUEEZE FIX (992-1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  /* Hide subtitle — stronger selector */
+  nav .premium-logo-text .premium-logo-subtitle,
+  .navbar .premium-logo-subtitle,
+  .navbar-brand .premium-logo-subtitle {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Tighter logo */
+  .navbar-brand .premium-logo-icon img,
+  nav .premium-logo-icon img {
+    width: 36px !important;
+    max-width: 36px !important;
+    min-width: 36px !important;
+  }
+
+  /* Tighter logo title */
+  .navbar-brand .premium-logo-title,
+  nav .premium-logo-title {
+    font-size: 0.82rem !important;
+  }
+
+  /* Compact nav links */
+  .navbar-expand-lg .navbar-nav .nav-link,
+  .navbar .navbar-nav .nav-link {
+    font-size: 0.72rem !important;
+    padding-left: 0.35rem !important;
+    padding-right: 0.35rem !important;
+    letter-spacing: 0.03em !important;
+    white-space: nowrap;
+  }
+
+  /* Lang switcher: no wrapping, compact */
+  .navbar-expand-lg .navbar-nav~.language_links,
+  .navbar-collapse .language_links.premium-lang-header {
+    white-space: nowrap;
+    flex-shrink: 0 !important;
+    padding-left: 5px !important;
+  }
+
+  .navbar-collapse .language_links.premium-lang-header a,
+  .navbar-collapse .language_links.premium-lang-header span {
+    font-size: 0.72rem !important;
+  }
+
+  /* Force navbar not to wrap */
+  .navbar {
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+  }
+
+  .navbar-collapse {
+    overflow: visible !important;
+    flex-wrap: nowrap !important;
+  }
+}
+
+/* 2. DUPLICATE LANG SWITCHER FIX (≤991px) */
+/* On mobile, the navbar-collapse becomes a fullscreen overlay.
+   The desktop lang switcher (d-none d-lg-flex) must be hidden. */
+@media (max-width: 991px) {
+
+  /* Hide the desktop lang switcher that sits INSIDE navbar-collapse.
+     Bootstrap's d-lg-flex at <992px should hide it, but in case
+     any rule overrides Bootstrap's d-none, force-hide it here. */
+  .navbar-collapse>.language_links,
+  .navbar-collapse>div>.language_links,
+  .navbar-collapse .premium-lang-header,
+  #mainNav .language_links.premium-lang-header {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* Only the .mobile-lang-switcher should be shown */
+  #mainNav .mobile-lang-switcher {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+}

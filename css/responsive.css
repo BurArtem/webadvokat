@@ -1,0 +1,821 @@
+/* ============================================================
+   RESPONSIVE.CSS — Adaptive layout for webadvokat.com.ua
+   Breakpoints: 1199px | 991px | 768px | 576px | 480px | 375px
+   ============================================================ */
+
+/* =============================================================
+   GLOBAL RESETS — prevent horizontal scroll on all devices
+   ============================================================= */
+html,
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+iframe {
+    max-width: 100%;
+}
+
+.container,
+.container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 100%;
+}
+
+/* =============================================================
+   HEADER / NAVBAR — Global styles
+   ============================================================= */
+.header {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+    /* no horizontal scroll from header pseudo-elements */
+}
+
+/* Sticky nav bar — single fixed strip */
+.premium-sticky-menu {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: clamp(12px, 3vw, 50px) !important;
+    padding-right: clamp(12px, 3vw, 50px) !important;
+    z-index: 999999 !important;
+    box-sizing: border-box;
+}
+
+.premium-sticky-menu.scrolled {
+    background-color: rgba(17, 17, 17, 0.97) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar inner: keep all items on one line */
+.navbar {
+    padding: 0 !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Logo — smaller text on medium desktops */
+.premium-logo {
+    flex-shrink: 0;
+    margin-right: 1rem !important;
+}
+
+.premium-logo-title {
+    font-size: clamp(0.85rem, 1.5vw, 1.1rem) !important;
+    white-space: nowrap;
+}
+
+.premium-logo-subtitle {
+    font-size: clamp(0.6rem, 1vw, 0.75rem) !important;
+}
+
+/* Desktop nav links */
+@media (min-width: 992px) {
+    .navbar-nav .nav-link {
+        font-size: clamp(0.7rem, 1.1vw, 0.9rem) !important;
+        padding-left: clamp(0.4rem, 0.8vw, 0.85rem) !important;
+        padding-right: clamp(0.4rem, 0.8vw, 0.85rem) !important;
+        letter-spacing: 0.05em;
+    }
+
+    /* Language switcher sizing */
+    .language_links.premium-lang-header a,
+    .language_links.premium-lang-header span {
+        font-size: clamp(0.7rem, 1vw, 0.85rem) !important;
+    }
+
+    .language_links.premium-lang-header {
+        gap: 4px !important;
+        padding-left: clamp(8px, 1vw, 16px) !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* =============================================================
+   HERO SECTION — no black gap
+   ============================================================= */
+.first_section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+    padding-top: 100px !important;
+    padding-bottom: 80px !important;
+    margin-top: 0 !important;
+    background-image:
+        linear-gradient(to right, rgba(17, 17, 17, 0.97) 0%, rgba(17, 17, 17, 0.82) 50%, rgba(17, 17, 17, 0.55) 100%),
+        url('../img/Work.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+.first_section .container {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 0 !important;
+}
+
+/* Hero heading — fluid */
+/* Hero content block: shift right from left edge */
+.first_title {
+    padding-left: clamp(3rem, 6vw, 8rem) !important;
+}
+
+.first_title h1,
+.header .first_section .first_title h1 {
+    font-size: clamp(2.5rem, 5vw + 0.5rem, 5rem) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 2rem !important;
+}
+
+/* Trust bar: always horizontal */
+.trust-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 2rem !important;
+    align-items: flex-start;
+    justify-content: flex-start !important;
+    margin: 2rem 0 2.5rem !important;
+    padding: 1.5rem 0 !important;
+    border-top: 1px solid rgba(182, 138, 82, 0.3);
+    border-bottom: 1px solid rgba(182, 138, 82, 0.3);
+    max-width: fit-content;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 80px;
+}
+
+.trust-item .number {
+    font-size: clamp(2rem, 4vw, 3rem) !important;
+    color: var(--accent);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.trust-item .label {
+    font-size: clamp(0.7rem, 1.3vw, 0.85rem) !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted, #a0a0a0);
+    margin-top: 6px;
+}
+
+/* Scroll indicator */
+.scrolling {
+    position: static !important;
+    margin-top: 3rem !important;
+    margin-bottom: 0 !important;
+    transform: none !important;
+    left: auto !important;
+    text-align: left;
+    opacity: 0.7;
+}
+
+/* CTA button: moved lower */
+.communication_button {
+    margin-top: 2.5rem !important;
+}
+
+.communication_button a,
+.btn-premium {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    min-width: 220px;
+    max-width: 100%;
+}
+
+/* =============================================================
+   SECTION 2: ХТО МИ?
+   ============================================================= */
+.second_section {
+    height: auto !important;
+}
+
+.who_are_we_images .premium-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =============================================================
+   GRIDS — Services, Features, Reviews
+   Base (desktop-first): explicit columns for symmetry
+   ============================================================= */
+
+/* 6 cards → 3+3 on desktop, 2+2+2 on tablet, 1 column on mobile */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* 8 items → 4+4 on desktop */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* 6 reviews → 3+3 on desktop */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.service-card,
+.feature-item,
+.review-card {
+    min-width: 0;
+    width: 100%;
+}
+
+/* =============================================================
+   CONTACT SECTION — no overflow
+   ============================================================= */
+.contact_section,
+.fifth_section,
+[class*="contact"] {
+    overflow: hidden;
+}
+
+.premium-form {
+    padding: clamp(1.5rem, 4vw, 3rem) !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Submit row — button left, link right */
+.premium-form .d-flex.justify-content-between {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* =============================================================
+   FOOTER
+   ============================================================= */
+.premium-footer {
+    padding: clamp(3rem, 6vw, 5rem) 0 2rem !important;
+}
+
+.map-wrapper {
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.map-wrapper iframe {
+    min-height: 300px;
+    display: block;
+}
+
+/* =============================================================
+   BREAKPOINT: 992 – 1199px (Medium Desktop — "squeezing" zone)
+   Navbar is still horizontal but container is narrower
+   ============================================================= */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    /* Hide subtitle to save horizontal space */
+    .premium-logo-subtitle {
+        display: none !important;
+    }
+
+    /* Smaller logo icon */
+    .premium-logo-icon img {
+        width: 38px !important;
+        max-width: 38px !important;
+        min-width: 38px !important;
+        height: auto !important;
+    }
+
+    /* logo title: slightly smaller */
+    .premium-logo-title {
+        font-size: 0.88rem !important;
+        white-space: nowrap;
+    }
+
+    /* Nav links: even tighter */
+    .navbar-nav .nav-link {
+        font-size: 0.72rem !important;
+        padding-left: 0.38rem !important;
+        padding-right: 0.38rem !important;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+    }
+
+    /* Lang switcher: compact */
+    .language_links.premium-lang-header {
+        gap: 2px !important;
+        padding-left: 6px !important;
+        white-space: nowrap;
+        flex-shrink: 0 !important;
+        display: flex !important;
+        /* ensure it's visible */
+    }
+
+    .language_links.premium-lang-header a,
+    .language_links.premium-lang-header span {
+        font-size: 0.72rem !important;
+    }
+
+    /* navbar shouldn't wrap */
+    .navbar {
+        flex-wrap: nowrap !important;
+    }
+
+    /* Prevent navbar content from overflowing */
+    .navbar-collapse {
+        overflow: visible !important;
+    }
+}
+
+/* =============================================================
+   BREAKPOINT: ≤ 991px (Tablet Landscape & below)
+   Hamburger menu activates, fullscreen overlay
+   ============================================================= */
+@media (max-width: 991px) {
+
+    /* Header background on mobile (always visible) */
+    .premium-sticky-menu {
+        background-color: rgba(42, 42, 42, 0.95) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    /* === FULLSCREEN OVERLAY MENU === */
+    .navbar-collapse {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: rgba(42, 42, 42, 0.99) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        z-index: 100000 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        flex-grow: 0 !important;
+        overflow-y: auto !important; /* Allow scrolling on small landscape screens */
+        overflow-x: hidden !important;
+    }
+
+    .navbar-collapse.show {
+        opacity: 1 !important;
+        pointer-events: all !important;
+    }
+
+    /* Nav links in overlay: large, centered */
+    .navbar-collapse .navbar-nav {
+        align-items: center !important;
+        width: 100% !important;
+        flex-direction: column !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .navbar-collapse .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-collapse .navbar-nav .nav-link {
+        font-size: 1.8rem !important;
+        font-family: 'Playfair Display', serif !important;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 0.4rem 0 !important;
+        padding: 0.6rem 1rem !important;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease !important;
+        display: block;
+        width: 100%;
+    }
+
+    .navbar-collapse.show .navbar-nav .nav-link {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    /* Stagger animations */
+    .navbar-collapse.show .nav-item:nth-child(1) .nav-link {
+        transition-delay: 0.07s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(2) .nav-link {
+        transition-delay: 0.13s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(3) .nav-link {
+        transition-delay: 0.19s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(4) .nav-link {
+        transition-delay: 0.25s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(5) .nav-link {
+        transition-delay: 0.31s;
+    }
+
+    .navbar-collapse.show .nav-item:nth-child(6) .nav-link {
+        transition-delay: 0.37s;
+    }
+
+    /* Lang switcher in overlay: centered, bigger */
+    .mobile-lang-switcher {
+        margin-top: 3rem;
+        display: flex !important;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        /* ← center, not right-aligned */
+        width: 100%;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease 0.43s, transform 0.4s ease 0.43s;
+    }
+
+    .navbar-collapse.show .mobile-lang-switcher {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .mobile-lang-switcher a {
+        color: #a0a0a0;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        /* bigger than before */
+        text-decoration: none;
+        transition: color 0.3s;
+        text-transform: uppercase;
+    }
+
+    .mobile-lang-switcher a:hover,
+    .mobile-lang-switcher a.active {
+        color: #b68a52;
+    }
+
+    .mobile-lang-switcher span {
+        color: rgba(255, 255, 255, 0.25);
+        font-size: 1.2rem;
+    }
+
+    /* Desktop-only lang switcher must be HIDDEN in overlay */
+    .navbar-collapse .language_links.premium-lang-header {
+        display: none !important;
+    }
+
+    /* Hamburger stays above overlay */
+    .navbar-toggler {
+        z-index: 100001 !important;
+        position: relative !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Hero on tablet landscape */
+    .first_section {
+        min-height: 70vh;
+        padding-top: 110px !important;
+    }
+
+    .first_title h1,
+    .header .first_section .first_title h1 {
+        font-size: clamp(2.2rem, 5vw, 3.5rem) !important;
+    }
+
+    /* Grids: 2 columns on tablet landscape */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.2rem;
+    }
+
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .second_section {
+        height: auto !important;
+    }
+
+    .map-wrapper,
+    .map-wrapper iframe {
+        min-height: 350px;
+    }
+}
+
+/* =============================================================
+   BREAKPOINT: ≤ 768px (Tablet Portrait)
+   ============================================================= */
+@media (max-width: 768px) {
+
+    /* Hero: full-height, lighter overlay for readability */
+    .first_section {
+        min-height: 100vh;
+        padding-top: 90px !important;
+        padding-bottom: 60px !important;
+        background-image:
+            linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.80)),
+            url('../img/Work.jpg');
+    }
+
+    /* Reset padding for mobile alignment */
+    .first_title {
+        padding-left: 15px !important;
+    }
+
+    .first_title h1,
+    .header .first_section .first_title h1 {
+        font-size: clamp(2rem, 7vw, 2.8rem) !important;
+    }
+
+    .trust-bar {
+        gap: 1.5rem !important;
+    }
+
+    /* Services: 2 columns */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Reviews: 2 columns */
+    .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Features: 4 → 2 columns */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Section headings */
+    .section_text h2,
+    .premium-heading {
+        font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+    }
+
+    /* Contact form */
+    .col-md-10.offset-md-1 {
+        width: 100% !important;
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Footer */
+    .footer-contact-info {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links-premium {
+        justify-content: center;
+    }
+
+    .map-wrapper,
+    .map-wrapper iframe {
+        min-height: 280px;
+    }
+}
+
+/* =============================================================
+   BREAKPOINT: ≤ 576px (Mobile Landscape / Large Phone)
+   ============================================================= */
+@media (max-width: 576px) {
+
+    .first_section {
+        padding-top: 80px !important;
+        min-height: 100svh;
+    }
+
+    .trust-bar {
+        gap: 1rem 2rem !important;
+        max-width: 100% !important;
+    }
+
+    /* CTA button: full width */
+    .communication_button a,
+    .btn-premium {
+        width: 100% !important;
+        min-width: unset;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        justify-content: center;
+    }
+
+    /* Services: 1 column */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    /* Features: 2 columns */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+    }
+
+    /* Reviews: 1 column */
+    .reviews-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    /* Contact form */
+    .premium-form {
+        padding: 1.5rem 1rem !important;
+        border-radius: 8px;
+    }
+
+    /* Submit button row: stack vertically */
+    .premium-form .d-flex.justify-content-between {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    /* Footer */
+    .premium-footer {
+        text-align: center;
+    }
+
+    .footer-heading {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-links-premium {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .map-wrapper,
+    .map-wrapper iframe {
+        min-height: 250px;
+    }
+
+    .language_links.premium-lang {
+        justify-content: center !important;
+        margin-top: 1rem;
+    }
+
+    .section {
+        padding: 50px 15px !important;
+    }
+}
+
+/* =============================================================
+   BREAKPOINT: ≤ 480px (Standard Mobile Portrait)
+   ============================================================= */
+@media (max-width: 480px) {
+
+    .first_title h1,
+    .header .first_section .first_title h1 {
+        font-size: clamp(1.8rem, 8vw, 2.4rem) !important;
+        line-height: 1.2 !important;
+    }
+
+    .trust-bar {
+        gap: 1rem !important;
+        justify-content: space-between !important;
+        max-width: 100% !important;
+    }
+
+    .trust-item {
+        min-width: calc(33% - 1rem);
+    }
+
+    /* Logo */
+    .premium-logo-title {
+        font-size: 0.9rem !important;
+        white-space: normal;
+        line-height: 1.25;
+        max-width: 160px; /* Prevent overlap with hamburger */
+    }
+
+    .premium-logo-icon img {
+        width: 34px !important;
+        max-width: 34px !important;
+        min-width: 34px !important;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .review-card {
+        padding: 1.5rem !important;
+    }
+
+    .section_text p,
+    .who_are_we_text p {
+        font-size: 0.95rem !important;
+        line-height: 1.65;
+    }
+
+    /* Mobile overlay menu: slightly smaller links */
+    .navbar-collapse .navbar-nav .nav-link {
+        font-size: 1.5rem !important;
+        margin: 0.3rem 0 !important;
+    }
+
+    .mobile-lang-switcher a {
+        font-size: 1.2rem;
+    }
+}
+
+/* =============================================================
+   BREAKPOINT: ≤ 375px (Small Mobile)
+   ============================================================= */
+@media (max-width: 375px) {
+
+    .first_title h1,
+    .header .first_section .first_title h1 {
+        font-size: clamp(1.6rem, 8vw, 2rem) !important;
+    }
+
+    .trust-item {
+        min-width: 0;
+        flex: 1 1 80px;
+    }
+
+    .trust-item .number {
+        font-size: 1.6rem !important;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem !important;
+    }
+
+    .feature-item {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+
+    .premium-logo-subtitle {
+        display: none;
+    }
+}
+
+/* =============================================================
+   UTILITY
+   ============================================================= */
+.accent-text {
+    color: var(--accent, #b68a52);
+}

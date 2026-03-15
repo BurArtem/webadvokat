@@ -1,0 +1,1252 @@
+.header {
+    background-image: url(../img/Work.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-position-x: 37%
+}
+
+.header .container-fluid {
+    position: relative;
+    margin: 0;
+    padding: 0
+}
+
+.header .container_top {
+    z-index: 1
+}
+
+.header .language_links {
+    margin-left: 91%;
+    position: absolute;
+    z-index: 2
+}
+
+.header .language_links a {
+    color: gray;
+    text-decoration: none
+}
+
+.header .language_links a:hover {
+    color: #fff
+}
+
+.header .language_links .active {
+    color: #fff
+}
+
+.header .language_links p {
+    color: #000;
+    display: inline
+}
+
+.header .navbar {
+    padding: 0 16px
+}
+
+.header .navbar a {
+    margin-right: 0
+}
+
+.header .navbar a img {
+    width: 200px;
+    height: auto
+}
+
+.header .navbar a:hover {
+    color: #fff !important
+}
+
+.header .navbar .nav-item {
+    margin: 0 5px
+}
+
+.header .navbar .nav-link {
+    font-size: 18px;
+    text-transform: uppercase
+}
+
+.header .navbar-collapse {
+    transition: .5s;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .fixed_menu {
+    position: fixed;
+    z-index: 99999;
+    top: -60px;
+    transition: top .5s;
+    background-color: #222439
+}
+
+.header .fixed_menu .navbar {
+    background-color: #222439
+}
+
+.header .fixed_menu .navbar .navbar-brand img {
+    width: 45px;
+    height: 40px
+}
+
+.header .fixed {
+    top: 0
+}
+
+.header .first_section {
+    margin-top: 50px
+}
+
+.header .first_section .first_title {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%
+}
+
+.header .first_section .first_title h1 {
+    color: #fff;
+    font-size: 70px;
+    font-weight: 300
+}
+
+.header .first_section .communication_button {
+    margin: 0 auto;
+    justify-content: center
+}
+
+.header .first_section .communication_button a {
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+    width: 500px;
+    height: auto;
+    font-weight: 300;
+    font-size: 35px
+}
+
+.header .first_section .communication_button a:hover {
+    color: #000
+}
+
+.header .first_section .communication_button .btn-outline-light:focus {
+    background: 0 0;
+    color: #fff;
+    box-shadow: none
+}
+
+.header .first_section .communication_button .btn-outline-light:active {
+    background: #fff;
+    color: #000
+}
+
+.header .first_section .communication_button button:hover {
+    transition: .3s
+}
+
+.header .first_section .line {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px
+}
+
+.header .first_section .line hr {
+    width: 70%;
+    border-top: 3px dotted #fff
+}
+
+.header .first_section .expiriense {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 40px;
+    text-align: center
+}
+
+.header .first_section .expiriense h2 {
+    color: #fff;
+    font-weight: 300
+}
+
+.header .first_section .expiriense p {
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    font-weight: 300
+}
+
+.header .first_section .expiriense a {
+    margin-top: 10px
+}
+
+.header .first_section .expiriense a:focus {
+    outline: 0
+}
+
+.header .first_section .scrolling {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 160px;
+    margin-bottom: 70px;
+    text-align: center
+}
+
+.header .first_section .scrolling p {
+    color: #fff;
+    font-size: 12px
+}
+
+.second_section {
+    overflow: hidden;
+    height: 600px;
+    margin-top: -70px;
+    padding-top: 70px
+}
+
+.second_section .who_are_we_images {
+    position: relatives
+}
+
+.second_section .who_are_we_images .first_img img {
+    width: 600px;
+    height: 450px
+}
+
+.second_section .who_are_we_images .second_img img {
+    position: absolute;
+    width: 500px;
+    height: 312px;
+    top: 50%;
+    left: 50%
+}
+
+.third_section .container-fluid {
+    padding: 0;
+    justify-content: center
+}
+
+.third_section .areas_of_practice_text {
+    text-align: center
+}
+
+.third_section .areas_of_practice_text p {
+    margin: 0 20%
+}
+
+.third_section .why_are_we_carousel {
+    margin-top: 30px;
+    width: 100%;
+    height: 100%
+}
+
+.third_section .why_are_we_carousel .carousel_slide {
+    position: relative
+}
+
+.third_section .why_are_we_carousel .carousel_slide img {
+    height: auto;
+    width: 100%
+}
+
+.third_section .why_are_we_carousel .carousel_slide .slide_text {
+    text-align: left;
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    color: #fff
+}
+
+.third_section .why_are_we_carousel .carousel_slide .slide_text h2 {
+    margin: 0
+}
+
+.third_section .why_are_we_carousel .carousel_slide .slide_text a {
+    text-decoration: none
+}
+
+.third_section .next,
+.third_section .prev {
+    position: absolute;
+    width: 32px;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+    cursor: pointer
+}
+
+.third_section .next {
+    right: 10px
+}
+
+.third_section .prev {
+    left: 10px
+}
+
+.fourth_section .why_are_we_text {
+    padding: 0 15px;
+    text-align: center
+}
+
+.fourth_section .why_are_we_text p {
+    margin: 0 20%
+}
+
+.fourth_section .why_are_we_icons {
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 30px
+}
+
+.fourth_section .why_are_we_icons div {
+    padding: 0;
+    line-height: 40px
+}
+
+.fourth_section .why_are_we_icons div img {
+    width: 48px;
+    float: left
+}
+
+.fourth_section .why_are_we_icons div h4 {
+    text-align: left;
+    margin-top: 6%;
+    padding-left: 60px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase
+}
+
+.fifth_section .reviews_carousel {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px
+}
+
+.fifth_section .reviews_carousel .carousel_slide {
+    max-width: 100%;
+    max-height: 100%;
+    display: flex
+}
+
+.fifth_section .reviews_carousel .carousel_slide img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px
+}
+
+.fifth_section .reviews_carousel .carousel_slide div {
+    font-size: 20px;
+    padding-left: 20px
+}
+
+.fifth_section .reviews_carousel .carousel_slide div i {
+    font-weight: 300
+}
+
+.fifth_section .reviews_carousel .carousel_slide div p {
+    font-size: 20px;
+    margin-bottom: 0
+}
+
+.fifth_section .reviews_carousel .slick-next:before,
+.fifth_section .reviews_carousel .slick-prev:before {
+    color: gray
+}
+
+.fifth_section .reviews_carousel .slick-dots {
+    position: relative;
+    margin-top: -20px
+}
+
+.footer {
+    width: 100%;
+    background-color: #373e53;
+    margin-top: 120px
+}
+
+.footer h2,
+.footer p {
+    color: #fff
+}
+
+.footer iframe {
+    margin: 20px;
+    margin-left: 0;
+    height: 350px;
+    left: -15px
+}
+
+.footer .footer_content {
+    margin: 20px;
+    align-self: end
+}
+
+.footer .footer_content .contact img {
+    width: 24px
+}
+
+.footer .footer_content .contact p {
+    margin-bottom: 10px
+}
+
+.footer .footer_content .social_network {
+    display: flex;
+    margin-top: 25px;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.footer .footer_content .social_network_link {
+    margin-bottom: 20px;
+    display: flex;
+    width: 50%
+}
+
+.footer .footer_content .social_network_link img {
+    width: 32px
+}
+
+.footer .footer_content .social_network_link a {
+    color: #fff;
+    text-decoration: none;
+    padding-left: 5px
+}
+
+.footer .footer_content .social_network_link a p {
+    margin: 0;
+    line-height: 32px
+}
+
+.footer .footer_content .social_network_link a p:hover {
+    color: #00f
+}
+
+.footer .footer_logo {
+    margin-bottom: 15px;
+    padding-left: 0
+}
+
+.footer .footer_line {
+    width: 100%
+}
+
+.footer .footer_line hr {
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+    border-color: #fff
+}
+
+.footer .language_links {
+    text-align: right;
+    margin-top: 16px
+}
+
+.footer .language_links a {
+    color: gray;
+    text-decoration: none
+}
+
+.footer .language_links a:hover {
+    color: #fff
+}
+
+.footer .language_links .active {
+    color: #fff
+}
+
+.footer .language_links p {
+    color: #000;
+    display: inline
+}
+
+.about main .container-fluid .partners .row div img {
+    width: 100%
+}
+
+.about main .container-fluid .partners .row div p {
+    text-align: left
+}
+
+.about main .container-fluid .partners .row div span {
+    font-size: 30px;
+    color: #000
+}
+
+.about main .container-fluid .about_carousel {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%
+}
+
+.about main .container-fluid .about_carousel .carousel_slide {
+    position: relative;
+    margin: 0 10px;
+    width: 50px
+}
+
+.about main .container-fluid .about_carousel .carousel_slide a img {
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 270px
+}
+
+.about main .container-fluid .slick-next:before,
+.about main .container-fluid .slick-prev:before {
+    color: gray
+}
+
+.about main .container-fluid .slick-dots {
+    position: relative;
+    margin-top: -20px
+}
+
+.services {
+    padding: 0
+}
+
+.services .h2 {
+    text-align: center
+}
+
+.services .dropdown {
+    border-top: 3px #000 solid;
+    border-left: 3px #000 solid;
+    border-right: 3px #000 solid;
+    width: 100%
+}
+
+.services .dropdown ::before,
+.services .dropdown-toggle::after {
+    right: 15px;
+    margin-top: 10px;
+    font-size: 120%;
+    position: absolute
+}
+
+.services .dropdown button {
+    text-align: left;
+    width: 100%;
+    border-radius: 0;
+    height: 50px
+}
+
+.services .dropdown-menu {
+    width: 100%;
+    margin-top: 0;
+    border: none;
+    background: #545b62;
+    position: relative !important;
+    transform: none !important;
+    border-top: 1px #000 solid;
+    border-radius: 0;
+    float: none
+}
+
+.services .dropdown-menu div {
+    font-weight: 300;
+    padding: 12px;
+    color: #fff
+}
+
+.services .dropdown-menu div p {
+    color: #fff
+}
+
+.services .dropdown-menu div ul {
+    color: #fff;
+    font-size: 18px
+}
+
+.services .dropdown .dropdown-menu .show {
+    position: relative
+}
+
+.services .dropdown:last-child {
+    border-bottom: 3px solid #000
+}
+
+.bootstrap-select.btn-group .btn .caret {
+    left: 12px
+}
+
+.price .container table {
+    width: 100%;
+    border: 1px solid #000
+}
+
+.price .container table td,
+.price .container table tr {
+    text-align: center;
+    border: 1px solid #000
+}
+
+.price .container table td p,
+.price .container table tr p {
+    margin: 0;
+    padding: 5px;
+    text-align: left;
+    color: #000
+}
+
+.price .price_text {
+    padding-top: 30px
+}
+
+.proficiency .container-fluid h2 {
+    text-align: center
+}
+
+.proficiency .container-fluid table {
+    width: 100%;
+    border: 1px solid #000
+}
+
+.proficiency .container-fluid table td,
+.proficiency .container-fluid table tr {
+    border: 1px solid #000
+}
+
+.proficiency .container-fluid table td p,
+.proficiency .container-fluid table tr p {
+    color: #000;
+    text-align: left;
+    padding: 5px 5px;
+    margin: 0
+}
+
+.proficiency .container-fluid table td a,
+.proficiency .container-fluid table tr a {
+    text-align: center
+}
+
+* {
+    font-family: Roboto, sans-serif
+}
+
+h2,
+h3,
+h4,
+p {
+    font-weight: 300
+}
+
+h2 {
+    margin-bottom: 16px
+}
+
+p {
+    color: #868e96;
+    font-size: 18px
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus,
+a.active.focus,
+a.active:focus,
+a.focus,
+a:active.focus,
+a:active:focus,
+a:focus,
+button.active.focus,
+button.active:focus,
+button.focus,
+button:active.focus,
+button:active:focus,
+button:focus {
+    outline: 0 !important;
+    outline-color: transparent !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0) !important
+}
+
+.main {
+    margin-top: 50px
+}
+
+.section {
+    padding-top: 100px
+}
+
+.section_text {
+    padding: 0 15px;
+    text-align: center
+}
+
+.section_text p {
+    margin: 0 20%
+}
+
+.template .header {
+    background: 0 0;
+    padding-bottom: 50px
+}
+
+.template .header .navbar {
+    position: fixed;
+    top: 0;
+    background-color: #222439
+}
+
+.template .header .navbar .navbar-brand img {
+    width: 45px;
+    height: 40px
+}
+
+.template main .container-fluid .container .row {
+    margin-top: 20px;
+    text-align: center
+}
+
+.template main .container-fluid .container .row h2 {
+    padding-bottom: 15px;
+    margin: 0 auto
+}
+
+.template main .container-fluid .first_img {
+    height: 350px;
+    width: 100%;
+    background-image: url(../img/about.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center
+}
+
+.template main .container-fluid .first_img .container {
+    padding-top: 50px
+}
+
+.template main .container-fluid .first_img .container h1,
+.template main .container-fluid .first_img .container p {
+    color: #fff;
+    font-weight: 400
+}
+
+.template main .container-fluid .first_img .container h1 {
+    font-size: 64px;
+    font-style: italic
+}
+
+.template main .container-fluid .first_img .container p {
+    font-size: 20px
+}
+
+@media screen and (min-width:2000px) {
+    .header .first_section .scrolling {
+        margin-top: 250px
+    }
+
+    .third_section .carousel .next,
+    .third_section .carousel .prev {
+        width: 48px
+    }
+
+    .third_section .carousel .carousel_slide .slide_text h2 {
+        font-size: 45px
+    }
+
+    .third_section .carousel .carousel_slide .slide_text a {
+        font-size: 26px
+    }
+}
+
+@media screen and (min-width:1900px) {
+    .header {
+        background-size: 100%
+    }
+}
+
+@media screen and (max-width:1950px) {
+    .header {
+        background-size: 1905px 937px
+    }
+}
+
+@media screen and (max-width:1440px) {
+    .header .first_section .first_title .scrolling {
+        margin-top: 0
+    }
+}
+
+@media screen and (max-width:1300px) {
+    .fifth_section .reviews_carousel .carousel_slide div {
+        font-size: 18px
+    }
+}
+
+@media screen and (max-width:1199px) {
+    .section {
+        padding-top: 60px
+    }
+
+    .footer {
+        margin-top: 55px
+    }
+
+    .header .language_links a {
+        font-size: 12px
+    }
+
+    .header .navbar .nav-link {
+        font-size: 16px
+    }
+
+    .header .navbar a img {
+        width: 160px
+    }
+
+    .second_section .who_are_we_images .first_img img {
+        height: 400px
+    }
+
+    .third_section .carousel .carousel_slide .slide_text h2 {
+        font-size: 24px
+    }
+
+    .fourth_section .why_are_we_icons div img {
+        width: 36px
+    }
+
+    .fourth_section .why_are_we_icons div h4 {
+        font-size: 13px;
+        padding-left: 50px
+    }
+
+    .services .dropdown-toggle::after {
+        margin-left: 83%
+    }
+}
+
+@media screen and (max-width:1024px) {
+    * p {
+        font-size: 18px
+    }
+
+    .header .first_section .first_title h1 {
+        font-size: 62px
+    }
+
+    .header .first_section .communication_button a {
+        width: 400px;
+        font-size: 25px
+    }
+
+    .header .first_section .expiriense h2 {
+        font-size: 25px
+    }
+
+    .header .first_section .expiriense p {
+        width: 60%
+    }
+
+    .header .first_section .scrolling {
+        margin-top: 130px
+    }
+
+    .template main .container-fluid .first_img .container h1 {
+        font-size: 48px
+    }
+
+    .template main .container-fluid .first_img .container p {
+        font-size: 18px
+    }
+
+    .template main .container-fluid .container .row h2 {
+        font-size: 30px
+    }
+
+    .template main .container-fluid .container .row p {
+        font-size: 15px
+    }
+}
+
+@media screen and (max-width:991px) {
+    .section .section_text p {
+        margin: 0
+    }
+
+    .header .language_links {
+        margin-left: 89%
+    }
+
+    .header .language_links a {
+        font-size: 10px
+    }
+
+    .header .language_links p {
+        font-size: 10px
+    }
+
+    .header .navbar .nav-link {
+        font-size: 15px;
+        margin: 0
+    }
+
+    .header .navbar a img {
+        width: 140px
+    }
+
+    .second_section {
+        height: 850px
+    }
+
+    .third_section .why_are_we_carousel .carousel_slide .slide_text h2 {
+        font-size: 20px
+    }
+
+    .third_section .why_are_we_carousel .next,
+    .third_section .why_are_we_carousel .prev {
+        width: 24px
+    }
+
+    .fourth_section .why_are_we_icons div img {
+        width: 56px
+    }
+
+    .fourth_section .why_are_we_icons div h4 {
+        font-size: 20px;
+        padding-left: 68px;
+        margin-top: 5%
+    }
+
+    .footer iframe {
+        left: 0;
+        margin: 0;
+        margin-top: 20px
+    }
+
+    .footer .footer_content {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        justify-content: space-around
+    }
+
+    .footer .footer_content .social_network_link {
+        width: 24%
+    }
+
+    .footer .footer_logo img {
+        width: 100px
+    }
+
+    .footer .language_links a {
+        font-size: 14px
+    }
+
+    .about main .container-fluid .partners .row div img {
+        width: 300px
+    }
+
+    .about main .container-fluid .partners .row div p {
+        font-size: 16px
+    }
+
+    .about main .container-fluid .partners .row div p span {
+        font-size: 26px
+    }
+
+    .services .dropdown-toggle::after {
+        margin-left: 78%
+    }
+}
+
+@media screen and (max-width:768px) {
+    * p {
+        font-size: 16px
+    }
+
+    * li {
+        font-size: 16px
+    }
+
+    .header .first_section .first_title h1 {
+        font-size: 42px
+    }
+
+    .header .first_section .communication_button a {
+        width: 300px;
+        font-size: 20px
+    }
+
+    .header .first_section .scrolling {
+        margin-top: 150px
+    }
+
+    .template main .container-fluid .first_img {
+        height: 250px;
+        background-position-x: 37%
+    }
+
+    .template main .container-fluid .first_img .container h1 {
+        font-size: 40px
+    }
+
+    .template main .container-fluid .first_img .container p {
+        font-size: 15px
+    }
+
+    .template main .container-fluid .container .row p {
+        font-size: 15px
+    }
+
+    .about main .container-fluid .partners .row div img {
+        width: 300px
+    }
+
+    .about main .container-fluid .partners .row div p {
+        text-align: center
+    }
+}
+
+@media screen and (max-width:767px) {
+    .section {
+        padding-top: 55px
+    }
+
+    .header .language_links {
+        display: none
+    }
+
+    .header .navbar {
+        position: fixed;
+        padding: 0;
+        margin: 0;
+        background-color: #222439
+    }
+
+    .header .navbar-collapse {
+        background-color: #222439
+    }
+
+    .header .navbar a {
+        padding: 5px 10px
+    }
+
+    .header .navbar a img {
+        width: 45px;
+        height: 40px
+    }
+
+    .header .navbar-toggler {
+        margin: 8px 15px;
+        outline: 0
+    }
+
+    .header .navbar-toggler:focus {
+        background-color: #5c5c5c;
+        transition: .3s
+    }
+
+    .header .navbar-toggler:hover {
+        background-color: #5c5c5c;
+        transition: .3s
+    }
+
+    .header .navbar-nav {
+        border-top: 1px solid #000
+    }
+
+    .header .navbar-nav .nav-item {
+        border-top: 1px solid #000;
+        margin: 0;
+        padding: 3px 0;
+        padding-left: 5px
+    }
+
+    .header .navbar-nav .nav-item:first-child {
+        border-top: 1px solid #393a4d
+    }
+
+    .header .navbar-nav .nav-item:hover {
+        background-color: #00008b;
+        transition: .3s
+    }
+
+    .header .first_section {
+        margin-top: 65px
+    }
+
+    .second_section {
+        height: 1000px
+    }
+
+    .second_section .who_are_we_images .first_img img {
+        width: 100%;
+        height: 100%
+    }
+
+    .second_section .who_are_we_images .second_img img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0
+    }
+
+    .fourth_section .why_are_we_icons div img {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 56px;
+        float: none
+    }
+
+    .fourth_section .why_are_we_icons div h4 {
+        text-align: center;
+        padding: 0;
+        font-size: 15px
+    }
+
+    .fifth_section .reviews_carousel .carousel_slide {
+        display: block
+    }
+
+    .fifth_section .reviews_carousel .carousel_slide img {
+        margin: 0 auto;
+        margin-bottom: 15px
+    }
+
+    .fifth_section .reviews_carousel .carousel_slide div {
+        text-align: center;
+        font-size: 20px;
+        padding: 0
+    }
+
+    .services .dropdown-toggle::after {
+        margin-left: 72%
+    }
+}
+
+@media screen and (max-width:580px) {
+    .fourth_section .why_are_we_icons {
+        padding: 0 5px
+    }
+
+    .fourth_section .why_are_we_icons div img {
+        width: 40px
+    }
+
+    .fourth_section .why_are_we_icons div h4 {
+        font-size: 14px
+    }
+
+    .fifth_section .reviews_carousel .carousel_slide div {
+        font-size: 18px
+    }
+
+    .footer iframe {
+        max-width: 100%
+    }
+
+    .footer .footer_content {
+        margin-top: 15px
+    }
+
+    .footer .footer_content .social_network_link {
+        display: block;
+        width: 50%
+    }
+
+    .footer .footer_logo {
+        padding-left: 10px
+    }
+
+    .footer .footer_logo img {
+        width: 90px
+    }
+
+    .footer .language_links a {
+        font-size: 12px
+    }
+
+    .proficiency .container-fluid {
+        padding: 0
+    }
+}
+
+@media screen and (max-width:479px) {
+    .third_section .why_are_we_carousel .carousel_slide .slide_text h2 {
+        font-size: 28px
+    }
+
+    .proficiency .container-fluid table td p,
+    .proficiency .container-fluid table tr p {
+        font-size: 14px
+    }
+
+    .proficiency .container-fluid table td a,
+    .proficiency .container-fluid table tr a {
+        font-size: 14px
+    }
+}
+
+@media screen and (max-width:425px) {
+    p {
+        font-size: 16px
+    }
+
+    .header .first_section .first_title h1 {
+        font-size: 32px
+    }
+
+    .header .first_section .communication_button a {
+        width: 200px;
+        font-size: 15px
+    }
+
+    .header .first_section .expiriense h2 {
+        font-size: 25px
+    }
+
+    .header .first_section .expiriense p {
+        width: 80%
+    }
+
+    .header .first_section .scrolling {
+        margin-top: 150px
+    }
+
+    .second_section {
+        height: 850px
+    }
+
+    .template main .container-fluid .first_img .container h1 {
+        font-size: 32px
+    }
+
+    .template main .container-fluid .first_img .container p {
+        font-size: 15px
+    }
+
+    .about main .container-fluid .partners .row div img {
+        width: 290px
+    }
+
+    .proficiency .container-fluid table td p,
+    .proficiency .container-fluid table tr p {
+        font-size: 12px
+    }
+
+    .proficiency .container-fluid table td a,
+    .proficiency .container-fluid table tr a {
+        font-size: 12px
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    .proficiency .container-fluid table td p,
+    .proficiency .container-fluid table tr p {
+        font-size: 10px
+    }
+
+    .proficiency .container-fluid table td a,
+    .proficiency .container-fluid table tr a {
+        font-size: 10px
+    }
+}
