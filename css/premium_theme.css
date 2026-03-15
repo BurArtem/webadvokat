@@ -288,19 +288,37 @@ p {
    HERO SECTION
    ========================================================================== */
 .first_section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  background-image:
-    linear-gradient(to right, rgba(17, 17, 17, 0.97) 0%, rgba(17, 17, 17, 0.75) 50%, rgba(17, 17, 17, 0.45) 100%),
-    url('../img/Work.jpg');
-  background-size: cover;
-  background-position: center center;
-  margin-top: 0;
-  /* no negative margin — header now uses flexbox */
-  padding-top: 100px;
-  padding-bottom: 50px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: none;
+    margin-top: 0;
+    padding-top: 100px;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+.hero-photo-container {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 80px;
+    width: 55%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-photo {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(-30px 0 60px rgba(0, 0, 0, 0.5));
 }
 
 
@@ -431,16 +449,19 @@ p {
 
 /* Responsive Overrides */
 @media (max-width: 991px) {
-  .first_section {
-    padding-top: 200px;
-    background-image:
-      linear-gradient(to right, rgba(17, 17, 17, 0.95) 0%, rgba(17, 17, 17, 0.85) 100%),
-      url('../img/Work.jpg');
-  }
+    .first_section {
+        padding-top: 200px;
+        padding-bottom: 50px;
+        background-image: linear-gradient(to right, rgba(17, 17, 17, 0.95) 0%, rgba(17, 17, 17, 0.85) 100%), url('../img/Work.jpg');
+    }
 
-  .first_title h1 {
-    font-size: 2.5rem;
-  }
+    .hero-photo-container {
+        display: none;
+    }
+
+    .first_title h1 {
+        font-size: 2.5rem;
+    }
 
   .trust-bar {
     flex-wrap: wrap;
@@ -984,14 +1005,14 @@ p {
 }
 
 .header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(20, 22, 28, 0.95) 0%, rgba(20, 22, 28, 0.6) 50%, rgba(20, 22, 28, 0.2) 100%);
-  z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(20, 22, 28, 0.97) 0%, rgba(20, 22, 28, 0.85) 50%, rgba(20, 22, 28, 0.3) 100%);
+    z-index: 0;
 }
 
 .header .container-fluid,
