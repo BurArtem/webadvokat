@@ -301,12 +301,11 @@ overflow: hidden;
 
 .hero-photo-container {
 position: absolute;
-right: 0;
-top: -80px;
+right: 5%;
 bottom: 0;
-height: auto;
-width: 50%;
-max-width: 700px;
+top: -150px;
+height: 115%;
+width: auto;
 display: flex;
 align-items: flex-end;
 justify-content: flex-end;
@@ -315,10 +314,10 @@ pointer-events: none;
 }
 
 .hero-photo {
-width: 100%;
-height: auto;
-max-width: 700px;
-object-fit: contain;
+width: auto;
+height: 100%;
+max-height: 130vh;
+object-fit: cover;
 object-position: bottom center;
 filter: drop-shadow(-30px 0 60px rgba(0, 0, 0, 0.5));
 }
@@ -1344,14 +1343,14 @@ filter: drop-shadow(-30px 0 60px rgba(0, 0, 0, 0.5));
 /* 2K (2560x1440) and larger */
 @media (min-width: 2000px) {
 .hero-photo-container {
-right: 0;
-top: -80px;
-width: 50%;
-max-width: 850px;
+right: 5%;
+top: -150px;
+height: 115%;
+width: auto;
 }
 
 .hero-photo {
-max-width: 850px;
+max-height: 130vh;
 }
 
 .first_title h1 {
@@ -1362,14 +1361,14 @@ font-size: clamp(3.5rem, 6vw, 6rem) !important;
 /* 4K (3840x2160) and larger */
 @media (min-width: 3000px) {
 .hero-photo-container {
-right: 0;
-top: -100px;
-width: 45%;
-max-width: 1200px;
+right: 5%;
+top: -180px;
+height: 120%;
+width: auto;
 }
 
 .hero-photo {
-max-width: 1200px;
+max-height: 140vh;
 }
 
 .first_title h1 {
@@ -1380,10 +1379,10 @@ font-size: clamp(4rem, 7vw, 7rem) !important;
 /* 1920x1080 optimization */
 @media (min-width: 1920px) and (max-width: 2559px) {
 .hero-photo-container {
-right: 0;
-top: -60px;
-width: 50%;
-max-width: 700px;
+right: 5%;
+top: -150px;
+height: 115%;
+width: auto;
 }
 }
 
