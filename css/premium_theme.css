@@ -285,40 +285,48 @@ p {
 }
 
 /* ==========================================================================
-   HERO SECTION
-   ========================================================================== */
+HERO SECTION
+========================================================================== */
 .first_section {
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  background-image: none;
-  margin-top: 0;
-  padding-top: 100px;
-  padding-bottom: 0;
-  overflow: hidden;
+min-height: 85vh;
+display: flex;
+align-items: center;
+position: relative;
+background-image: none;
+margin-top: 0;
+padding-top: 100px;
+padding-bottom: 0;
+overflow: hidden;
 }
 
 .hero-photo-container {
-  position: absolute;
-  right: -15%;
-  bottom: -50px;
-  top: 80px;
-  width: 80%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  z-index: 1;
-  pointer-events: none;
+position: absolute;
+right: 0;
+top: -80px;
+bottom: 0;
+height: auto;
+width: 50%;
+max-width: 700px;
+display: flex;
+align-items: flex-end;
+justify-content: flex-end;
+z-index: 1;
+pointer-events: none;
 }
 
 .hero-photo {
-  height: calc(100vh + 200px);
-  max-height: calc(100vh + 200px);
-  width: auto;
-  object-fit: contain;
-  object-position: bottom center;
-  filter: drop-shadow(-30px 0 60px rgba(0, 0, 0, 0.5));
+width: 100%;
+height: auto;
+max-width: 700px;
+object-fit: contain;
+object-position: bottom center;
+filter: drop-shadow(-30px 0 60px rgba(0, 0, 0, 0.5));
+}
+
+.first_title {
+  text-align: left !important;
+  max-width: 500px;
+  margin: 0 !important;
 }
 
 
@@ -1330,9 +1338,58 @@ p {
   }
 }
 
+/* ==========================================================================
+2K, 4K AND LARGE SCREEN OPTIMIZATIONS
+========================================================================== */
+/* 2K (2560x1440) and larger */
+@media (min-width: 2000px) {
+.hero-photo-container {
+right: 0;
+top: -80px;
+width: 50%;
+max-width: 850px;
+}
+
+.hero-photo {
+max-width: 850px;
+}
+
+.first_title h1 {
+font-size: clamp(3.5rem, 6vw, 6rem) !important;
+}
+}
+
+/* 4K (3840x2160) and larger */
+@media (min-width: 3000px) {
+.hero-photo-container {
+right: 0;
+top: -100px;
+width: 45%;
+max-width: 1200px;
+}
+
+.hero-photo {
+max-width: 1200px;
+}
+
+.first_title h1 {
+font-size: clamp(4rem, 7vw, 7rem) !important;
+}
+}
+
+/* 1920x1080 optimization */
+@media (min-width: 1920px) and (max-width: 2559px) {
+.hero-photo-container {
+right: 0;
+top: -60px;
+width: 50%;
+max-width: 700px;
+}
+}
+
 /* 2. DUPLICATE LANG SWITCHER FIX (≤991px) */
 /* On mobile, the navbar-collapse becomes a fullscreen overlay.
-   The desktop lang switcher (d-none d-lg-flex) must be hidden. */
+The desktop lang switcher (d-none d-lg-flex) must be hidden. */
 @media (max-width: 991px) {
 
   /* Hide the desktop lang switcher that sits INSIDE navbar-collapse.

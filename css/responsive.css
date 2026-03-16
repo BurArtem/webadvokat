@@ -353,9 +353,30 @@ iframe {
 }
 
 /* =============================================================
-   BREAKPOINT: ≤ 991px (Tablet Landscape & below)
-   Hamburger menu activates, fullscreen overlay
-   ============================================================= */
+BREAKPOINT: ≤ 1199px (Tablet - background image instead of photo)
+Hamburger menu activates, fullscreen overlay
+============================================================= */
+@media (max-width: 1199px) {
+  /* Hide hero photo on tablet and below */
+  .hero-photo-container {
+    display: none !important;
+  }
+  
+  /* Add background image to first section */
+  .first_section {
+    background-image: 
+      linear-gradient(rgba(17, 17, 17, 0.88), rgba(17, 17, 17, 0.92)),
+      url('../img/Main_photo.png') !important;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: scroll;
+  }
+}
+
+/* =============================================================
+BREAKPOINT: ≤ 991px (Tablet Landscape & below)
+Hamburger menu activates, fullscreen overlay
+============================================================= */
 @media (max-width: 991px) {
 
     /* Header background on mobile (always visible) */
@@ -544,19 +565,50 @@ iframe {
 }
 
 /* =============================================================
-   BREAKPOINT: ≤ 768px (Tablet Portrait)
-   ============================================================= */
+BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
+============================================================= */
 @media (max-width: 768px) {
 
-    /* Hero: full-height, lighter overlay for readability */
-    .first_section {
-        min-height: 100vh;
-        padding-top: 90px !important;
-        padding-bottom: 60px !important;
-        background-image:
-            linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.80)),
-            url('../img/Work.jpg');
-    }
+  /* Hero: full-height with blurred background */
+  .first_section {
+    min-height: 100vh;
+    padding-top: 90px !important;
+    padding-bottom: 60px !important;
+    background-image:
+      linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.90)),
+      url('../img/Main_photo.png');
+    background-size: cover;
+    background-position: center bottom;
+    filter: blur(0px);
+  }
+  
+  /* Add blur effect to background image only */
+  .first_section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/Main_photo.png');
+    background-size: cover;
+    background-position: center bottom;
+    filter: blur(3px);
+    z-index: 0;
+    opacity: 0.3;
+  }
+  
+  .first_section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Text centered on mobile */
+  .first_title {
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding-left: 15px !important;
+  }
 
     /* Reset padding for mobile alignment */
     .first_title {
