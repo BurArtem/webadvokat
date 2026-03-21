@@ -996,13 +996,13 @@ BREAKPOINT: 1920-2559px (Full HD)
 BREAKPOINT: 1200-1919px (Средние экраны)
 ============================================================= */
 @media (min-width: 1200px) and (max-width: 1919px) {
-/* 1024-1199px: больше картинка, меньше рамки */
+/* 1024-1199px: ещё больше картинка, ещё меньше рамки */
 .premium-image-wrapper {
-padding: 20px clamp(20px, 3vw, 35px) !important;
+padding: 10px 15px !important;
 }
 
 .who_are_we_images .premium-image {
-max-height: clamp(400px, 55vh, 550px) !important;
+max-height: clamp(480px, 70vh, 700px) !important;
 }
 }
 
@@ -1012,11 +1012,11 @@ BREAKPOINT: 1200-1439px (около 1024-1200)
 @media (min-width: 1200px) and (max-width: 1439px) {
 /* ещё больше картинка, ещё меньше рамки */
 .premium-image-wrapper {
-padding: 15px 20px !important;
+padding: 8px 12px !important;
 }
 
 .who_are_we_images .premium-image {
-max-height: clamp(420px, 58vh, 580px) !important;
+max-height: clamp(500px, 75vh, 750px) !important;
 }
 }
 
@@ -1024,13 +1024,13 @@ max-height: clamp(420px, 58vh, 580px) !important;
 BREAKPOINT: 1440-1919px (1440p)
 ============================================================= */
 @media (min-width: 1440px) and (max-width: 1919px) {
-/* слегка больше картинка */
+/* ещё больше картинка */
 .premium-image-wrapper {
-padding: 25px clamp(25px, 4vw, 45px) !important;
+padding: 12px 18px !important;
 }
 
 .who_are_we_images .premium-image {
-max-height: clamp(420px, 58vh, 580px) !important;
+max-height: clamp(500px, 72vh, 720px) !important;
 }
 }
 
@@ -1098,13 +1098,13 @@ padding-right: 1.2rem !important;
 font-size: 1rem !important;
 }
 
-/* 2K: больше картинка, меньше рамки */
+/* 2K: ещё больше картинка, ещё меньше рамки */
 .premium-image-wrapper {
-padding: 35px clamp(30px, 4vw, 50px) !important;
+padding: 15px 20px !important;
 }
 
 .who_are_we_images .premium-image {
-max-height: clamp(450px, 60vh, 600px) !important;
+max-height: clamp(550px, 75vh, 800px) !important;
 }
 }
 
