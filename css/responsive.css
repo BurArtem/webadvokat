@@ -257,16 +257,16 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
-/* Отступы: больше на больших экранах, меньше на маленьких */
-padding: clamp(20px, 5vh, 100px) clamp(20px, 6vw, 120px);
+/* Меньше отступы */
+padding: clamp(10px, 2vh, 30px) clamp(10px, 2vw, 40px);
 }
 
-/* Фото: contain = никогда не обрезается */
+/* Фото: contain = никогда не обрезается, больше по высоте */
 .who_are_we_images .premium-image {
 width: auto;
 height: auto;
 max-width: 100%;
-max-height: clamp(350px, 60vh, 700px);
+max-height: clamp(500px, 85vh, 900px);
 object-fit: contain;
 object-position: center;
 border-radius: 8px;
@@ -998,7 +998,7 @@ BREAKPOINT: 1200-1919px (Средние экраны)
 @media (min-width: 1200px) and (max-width: 1919px) {
 /* меньше рамки */
 .premium-image-wrapper {
-padding: 10px 15px !important;
+padding: 5px 8px !important;
 }
 }
 
@@ -1008,7 +1008,7 @@ BREAKPOINT: 1200-1439px (около 1024-1200)
 @media (min-width: 1200px) and (max-width: 1439px) {
 /* ещё меньше рамки */
 .premium-image-wrapper {
-padding: 8px 12px !important;
+padding: 5px 5px !important;
 }
 }
 
@@ -1018,7 +1018,7 @@ BREAKPOINT: 1440-1919px (1440p)
 @media (min-width: 1440px) and (max-width: 1919px) {
 /* меньше рамки */
 .premium-image-wrapper {
-padding: 12px 18px !important;
+padding: 8px 10px !important;
 }
 }
 
@@ -1088,7 +1088,7 @@ font-size: 1rem !important;
 
 /* 2K: меньше рамки */
 .premium-image-wrapper {
-padding: 15px 20px !important;
+padding: 10px 15px !important;
 }
 }
 
