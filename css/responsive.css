@@ -55,6 +55,7 @@ iframe {
     padding-right: clamp(12px, 3vw, 50px) !important;
     z-index: 999999 !important;
     box-sizing: border-box;
+    transition: all 0.3s ease; /* Добавляем плавность */
 }
 
 .premium-sticky-menu.scrolled {
@@ -62,6 +63,18 @@ iframe {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.premium-sticky-menu:not(.scrolled) {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Fix mobile menu background when expanded */
+.premium-sticky-menu.mobile-menu-open {
+    background-color: rgba(17, 17, 17, 0.97) !important;
 }
 
 /* Navbar inner: keep all items on one line */
@@ -113,9 +126,9 @@ iframe {
 .first_section {
     flex: 1;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     min-height: 80vh;
-    padding-top: 100px !important;
+    padding-top: 150px !important;
     padding-bottom: 80px !important;
     margin-top: 0 !important;
     background-image:
@@ -144,12 +157,23 @@ iframe {
     margin-bottom: 2rem !important;
 }
 
+@media (max-width: 1440px) and (min-width: 992px) {
+    .first_title {
+        padding-left: 15px;
+    }
+    
+    .first_title h1,
+    .header .first_section .first_title h1 {
+        font-size: clamp(3rem, 5vw, 4.5rem) !important;
+    }
+}
+
 /* Trust bar: always horizontal */
 .trust-bar {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: wrap;
-    gap: 2rem !important;
+    flex-wrap: nowrap !important;
+    gap: 1.5rem !important; /* Уменьшаем отступ для мобильных чтобы влезало */
     align-items: flex-start;
     justify-content: flex-start !important;
     margin: 2rem 0 2.5rem !important;
@@ -157,6 +181,7 @@ iframe {
     border-top: 1px solid rgba(182, 138, 82, 0.3);
     border-bottom: 1px solid rgba(182, 138, 82, 0.3);
     max-width: fit-content;
+    overflow-x: auto; /* Позволяем скроллить если не влезает */
 }
 
 .trust-item {
@@ -209,16 +234,43 @@ iframe {
 }
 
 /* =============================================================
-   SECTION 2: ХТО МИ?
-   ============================================================= */
+SECTION 2: ХТО МИ? — Photo with adaptive frames
+Photo scales with text height, never cropped
+============================================================= */
 .second_section {
-    height: auto !important;
+height: auto !important;
+min-height: auto !important;
 }
 
+/* Контейнер фото — растягивается по высоте текста */
+.who_are_we_images {
+display: flex;
+justify-content: center;
+align-items: stretch;
+height: 100%;
+min-height: 400px;
+}
+
+/* Wrapper с рамками слева/справа */
+.premium-image-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+height: 100%;
+padding: clamp(15px, 4vw, 60px) clamp(20px, 5vw, 80px);
+overflow: hidden;
+}
+
+/* Фото: contain = никогда не обрезается */
 .who_are_we_images .premium-image {
-    width: 100%;
-    height: auto;
-    display: block;
+width: auto;
+height: 100%;
+max-width: 100%;
+object-fit: contain;
+object-position: center;
+border-radius: 8px;
+display: block;
 }
 
 /* =============================================================
@@ -353,10 +405,14 @@ iframe {
 }
 
 /* =============================================================
-BREAKPOINT: ≤ 1199px (Tablet - background image instead of photo)
+BREAKPOINT: ≤ 991px (Tablet Landscape & below)
 Hamburger menu activates, fullscreen overlay
 ============================================================= */
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
+  .header {
+    min-height: auto;
+  }
+  
   /* Hide hero photo on tablet and below */
   .hero-photo-container {
     display: none !important;
@@ -371,13 +427,21 @@ Hamburger menu activates, fullscreen overlay
     background-position: center bottom;
     background-attachment: scroll;
   }
-}
 
-/* =============================================================
-BREAKPOINT: ≤ 991px (Tablet Landscape & below)
-Hamburger menu activates, fullscreen overlay
-============================================================= */
-@media (max-width: 991px) {
+  /* Center items */
+  .trust-bar {
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .communication_button {
+    text-align: center !important;
+  }
+  .scrolling {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 
     /* Header background on mobile (always visible) */
     .premium-sticky-menu {
@@ -390,6 +454,15 @@ Hamburger menu activates, fullscreen overlay
     }
 
     /* === FULLSCREEN OVERLAY MENU === */
+    .navbar {
+        position: relative !important;
+        border-bottom: none !important;
+    }
+    
+    .premium-header-bar {
+        border-bottom: none !important;
+    }
+
     .navbar-collapse {
         position: fixed !important;
         top: 0 !important;
@@ -531,8 +604,9 @@ Hamburger menu activates, fullscreen overlay
 
     /* Hero on tablet landscape */
     .first_section {
-        min-height: 70vh;
-        padding-top: 110px !important;
+        min-height: auto;
+        padding-top: 130px !important;
+        padding-bottom: 60px !important;
     }
 
     .first_title h1,
@@ -550,15 +624,30 @@ Hamburger menu activates, fullscreen overlay
         gap: 1.2rem;
     }
 
-    .reviews-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.reviews-grid {
+grid-template-columns: repeat(2, 1fr);
+}
 
-    .second_section {
-        height: auto !important;
-    }
+/* Second section photo on tablet */
+.second_section {
+height: auto !important;
+}
 
-    .map-wrapper,
+.who_are_we_images {
+min-height: 450px;
+margin-top: 2rem !important;
+}
+
+.premium-image-wrapper {
+padding: 20px clamp(20px, 4vw, 50px);
+}
+
+.who_are_we_images .premium-image {
+height: 100%;
+max-height: 500px;
+}
+
+.map-wrapper,
     .map-wrapper iframe {
         min-height: 350px;
     }
@@ -571,8 +660,8 @@ BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
 
   /* Hero: full-height with blurred background */
   .first_section {
-    min-height: 100vh;
-    padding-top: 90px !important;
+    min-height: auto;
+    padding-top: 180px !important;
     padding-bottom: 60px !important;
     background-image:
       linear-gradient(rgba(17, 17, 17, 0.85), rgba(17, 17, 17, 0.90)),
@@ -617,7 +706,7 @@ BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
 
     .first_title h1,
     .header .first_section .first_title h1 {
-        font-size: clamp(2rem, 7vw, 2.8rem) !important;
+        font-size: clamp(2.4rem, 8vw, 3.2rem) !important;
     }
 
     .trust-bar {
@@ -679,8 +768,9 @@ BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
 @media (max-width: 576px) {
 
     .first_section {
-        padding-top: 80px !important;
-        min-height: 100svh;
+        padding-top: 180px !important;
+        padding-bottom: 40px !important;
+        min-height: auto !important;
     }
 
     .trust-bar {
@@ -710,13 +800,30 @@ BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
         gap: 1rem;
     }
 
-    /* Reviews: 1 column */
-    .reviews-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1rem;
-    }
+/* Reviews: 1 column */
+.reviews-grid {
+grid-template-columns: 1fr !important;
+gap: 1rem;
+}
 
-    /* Contact form */
+/* Second section photo on mobile */
+.who_are_we_images {
+min-height: 350px !important;
+margin-top: 2rem !important;
+}
+
+.premium-image-wrapper {
+padding: 15px !important;
+}
+
+.who_are_we_images .premium-image {
+height: 100%;
+width: auto;
+max-width: 100%;
+max-height: 400px;
+}
+
+/* Contact form */
     .premium-form {
         padding: 1.5rem 1rem !important;
         border-radius: 8px;
@@ -771,26 +878,39 @@ BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
 
     .first_title h1,
     .header .first_section .first_title h1 {
-        font-size: clamp(1.8rem, 8vw, 2.4rem) !important;
+        font-size: clamp(2.2rem, 9vw, 2.8rem) !important;
         line-height: 1.2 !important;
     }
 
     .trust-bar {
-        gap: 1rem !important;
+        gap: 0.5rem !important;
         justify-content: space-between !important;
         max-width: 100% !important;
+        flex-wrap: nowrap !important;
     }
 
     .trust-item {
-        min-width: calc(33% - 1rem);
+        min-width: 0;
+        flex: 1;
+        text-align: center;
+    }
+
+    .trust-item .number {
+        font-size: 1.8rem !important;
+    }
+
+    .trust-item .label {
+        font-size: 0.65rem !important;
+        letter-spacing: 0 !important;
+        word-break: break-word;
     }
 
     /* Logo */
     .premium-logo-title {
         font-size: 0.9rem !important;
-        white-space: normal;
+        white-space: nowrap;
         line-height: 1.25;
-        max-width: 160px; /* Prevent overlap with hamburger */
+        max-width: none;
     }
 
     .premium-logo-icon img {
@@ -835,7 +955,7 @@ BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
 
     .first_title h1,
     .header .first_section .first_title h1 {
-        font-size: clamp(1.6rem, 8vw, 2rem) !important;
+        font-size: clamp(1.9rem, 9vw, 2.4rem) !important;
     }
 
     .trust-item {
@@ -862,6 +982,138 @@ BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
 
     .premium-logo-subtitle {
         display: none;
+    }
+}
+
+/* =============================================================
+   BREAKPOINT: ≥ 2560px (2K / Ultra Wide)
+   ============================================================= */
+@media (min-width: 2560px) {
+    .first_section {
+        padding-top: 25vh !important;
+    }
+
+    .first_title h1,
+    .header .first_section .first_title h1 {
+        font-size: clamp(5rem, 4vw, 7rem) !important;
+        margin-bottom: 3rem !important;
+    }
+
+    .trust-bar {
+        gap: 3rem !important;
+        padding: 2.5rem 0 !important;
+        margin: 3.5rem 0 4rem !important;
+    }
+
+    .trust-item .number {
+        font-size: clamp(3.5rem, 3vw, 5rem) !important;
+    }
+
+    .trust-item .label {
+        font-size: clamp(1rem, 0.8vw, 1.3rem) !important;
+        margin-top: 10px;
+    }
+
+    .communication_button a,
+    .btn-premium {
+        font-size: 1.2rem !important;
+        padding: 22px 60px !important;
+        min-width: 280px;
+    }
+
+    .scrolling span {
+        font-size: 1rem;
+    }
+    
+    /* Navbar scaling for 2K */
+    .premium-logo-icon img {
+        width: 50px !important;
+    }
+    
+    .premium-logo-title {
+        font-size: 1.3rem !important;
+    }
+    
+    .premium-logo-subtitle {
+        font-size: 0.85rem !important;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem !important;
+        padding-left: 1.2rem !important;
+        padding-right: 1.2rem !important;
+    }
+
+    .language_links.premium-lang-header a,
+    .language_links.premium-lang-header span {
+        font-size: 1rem !important;
+    }
+}
+
+/* =============================================================
+   BREAKPOINT: ≥ 3840px (4K Monitors)
+   ============================================================= */
+@media (min-width: 3840px) {
+    .first_section {
+        padding-top: 28vh !important;
+    }
+
+    .first_title h1,
+    .header .first_section .first_title h1 {
+        font-size: clamp(7rem, 5vw, 10rem) !important;
+        margin-bottom: 4rem !important;
+    }
+
+    .trust-bar {
+        gap: 4rem !important;
+        padding: 3rem 0 !important;
+        margin: 4rem 0 5rem !important;
+        border-top: 2px solid rgba(182, 138, 82, 0.3);
+        border-bottom: 2px solid rgba(182, 138, 82, 0.3);
+    }
+
+    .trust-item .number {
+        font-size: clamp(5rem, 4vw, 7rem) !important;
+    }
+
+    .trust-item .label {
+        font-size: clamp(1.4rem, 1vw, 1.8rem) !important;
+        margin-top: 15px;
+    }
+
+    .communication_button a,
+    .btn-premium {
+        font-size: 1.6rem !important;
+        padding: 30px 80px !important;
+        min-width: 360px;
+    }
+
+    .scrolling span {
+        font-size: 1.3rem;
+    }
+
+    /* Navbar scaling for 4K */
+    .premium-logo-icon img {
+        width: 70px !important;
+    }
+    
+    .premium-logo-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .premium-logo-subtitle {
+        font-size: 1.2rem !important;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1.4rem !important;
+        padding-left: 1.8rem !important;
+        padding-right: 1.8rem !important;
+    }
+
+    .language_links.premium-lang-header a,
+    .language_links.premium-lang-header span {
+        font-size: 1.4rem !important;
     }
 }
 

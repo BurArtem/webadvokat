@@ -909,8 +909,18 @@ filter: drop-shadow(-30px 0 60px rgba(0, 0, 0, 0.5));
 
 /* Premium Image Hover Effects */
 .premium-image-wrapper {
-  overflow: hidden;
-  border-radius: 4px;
+overflow: hidden;
+border-radius: 4px;
+}
+
+.premium-img-effect,
+.premium-image {
+transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.premium-image-wrapper:hover .premium-img-effect,
+.premium-image-wrapper:hover .premium-image {
+transform: scale(1.05);
 }
 
 .premium-img-effect,
@@ -1409,4 +1419,10 @@ The desktop lang switcher (d-none d-lg-flex) must be hidden. */
     justify-content: center !important;
     width: 100% !important;
   }
+}
+/* Stretch text in all sections globally */
+.section_text p, .third_section .areas_of_practice_text p, .fourth_section .why_are_we_text p {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    padding: 0 15px;
 }
