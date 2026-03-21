@@ -156,12 +156,12 @@ z-index: 0;
 pointer-events: none;
 }
 
-/* Hero photo — адаптивная ширина, "едет" справа налево при сжатии */
+/* Hero photo — прижато к правому краю, полный размер */
 .hero-photo {
-width: clamp(350px, 40vw, 600px);
-height: auto;
-max-height: 100vh;
-min-height: auto;
+width: auto;
+height: 100%;
+min-height: 100vh;
+max-height: none;
 object-fit: contain;
 object-position: bottom right;
 }
