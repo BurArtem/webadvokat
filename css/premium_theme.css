@@ -311,11 +311,14 @@ align-items: flex-end;
 justify-content: flex-end;
 z-index: 0;
 pointer-events: none;
+margin: 0;
+padding: 0;
 }
 
 .hero-photo {
 display: block;
-margin-left: auto;
+margin: 0;
+padding: 0;
 height: 100%;
 width: auto;
 max-width: none;
