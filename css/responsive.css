@@ -156,14 +156,16 @@ z-index: 0;
 pointer-events: none;
 }
 
-/* Hero photo — прижато к правому краю, полный размер */
+/* Hero photo — прижато к правому краю, без отступов */
 .hero-photo {
 width: auto;
 height: 100%;
 min-height: 100vh;
-max-height: none;
-object-fit: contain;
-object-position: bottom right;
+max-width: none;
+object-fit: cover;
+object-position: right bottom;
+margin: 0;
+padding: 0;
 }
 
 .first_section .container {
