@@ -148,7 +148,7 @@ right: 0;
 bottom: 0;
 top: 0;
 height: 100%;
-width: clamp(300px, 40vw, 50vw);
+width: auto;
 display: flex;
 align-items: flex-end;
 justify-content: flex-end;
@@ -158,10 +158,10 @@ pointer-events: none;
 
 /* Hero photo — адаптивная ширина, "едет" справа налево при сжатии */
 .hero-photo {
-width: auto;
-height: 100%;
-min-height: 100vh;
-max-width: none;
+width: clamp(350px, 40vw, 600px);
+height: auto;
+max-height: 100vh;
+min-height: auto;
 object-fit: contain;
 object-position: bottom right;
 }
