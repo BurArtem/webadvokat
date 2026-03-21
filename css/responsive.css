@@ -455,14 +455,12 @@ Hamburger menu activates, fullscreen overlay
 text-align: center !important;
 }
 .scrolling {
-position: relative !important;
+position: absolute !important;
+bottom: 2rem !important;
+left: 50% !important;
+transform: translateX(-50%) !important;
 text-align: center !important;
-margin-left: auto !important;
-margin-right: auto !important;
-margin-top: 2rem !important;
-bottom: auto !important;
-left: auto !important;
-transform: none !important;
+margin-top: 0 !important;
 }
 
     /* Header background on mobile (always visible) */
