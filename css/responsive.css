@@ -451,14 +451,19 @@ Hamburger menu activates, fullscreen overlay
     margin-left: auto !important;
     margin-right: auto !important;
   }
-  .communication_button {
-    text-align: center !important;
-  }
-  .scrolling {
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+.communication_button {
+text-align: center !important;
+}
+.scrolling {
+position: relative !important;
+text-align: center !important;
+margin-left: auto !important;
+margin-right: auto !important;
+margin-top: 2rem !important;
+bottom: auto !important;
+left: auto !important;
+transform: none !important;
+}
 
     /* Header background on mobile (always visible) */
     .premium-sticky-menu {
