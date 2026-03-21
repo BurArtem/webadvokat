@@ -236,6 +236,7 @@ iframe {
 /* =============================================================
 SECTION 2: ХТО МИ? — Photo with adaptive frames
 Photo scales with text height, never cropped
+Логика: при сжатии экрана отступы уменьшаются, картинка увеличивается
 ============================================================= */
 .second_section {
 height: auto !important;
@@ -246,27 +247,26 @@ min-height: auto !important;
 .who_are_we_images {
 display: flex;
 justify-content: center;
-align-items: stretch;
-height: 100%;
-min-height: 400px;
+align-items: center;
+width: 100%;
 }
 
-/* Wrapper с рамками слева/справа */
+/* Wrapper с рамками слева/справа — полностью адаптивный */
 .premium-image-wrapper {
 display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
-height: 100%;
-padding: clamp(15px, 4vw, 60px) clamp(20px, 5vw, 80px);
-overflow: hidden;
+/* Отступы: больше на больших экранах, меньше на маленьких */
+padding: clamp(20px, 5vh, 100px) clamp(20px, 6vw, 120px);
 }
 
 /* Фото: contain = никогда не обрезается */
 .who_are_we_images .premium-image {
 width: auto;
-height: 100%;
+height: auto;
 max-width: 100%;
+max-height: clamp(350px, 60vh, 700px);
 object-fit: contain;
 object-position: center;
 border-radius: 8px;
@@ -274,9 +274,9 @@ display: block;
 }
 
 /* =============================================================
-   GRIDS — Services, Features, Reviews
-   Base (desktop-first): explicit columns for symmetry
-   ============================================================= */
+GRIDS — Services, Features, Reviews
+Base (desktop-first): explicit columns for symmetry
+============================================================= */
 
 /* 6 cards → 3+3 on desktop, 2+2+2 on tablet, 1 column on mobile */
 .services-grid {
@@ -989,38 +989,14 @@ max-height: 400px;
 BREAKPOINT: 1920-2559px (Full HD)
 ============================================================= */
 @media (min-width: 1920px) and (max-width: 2559px) {
-/* Second section photo на Full HD — чуть меньше, чуть больше отступы */
-.who_are_we_images {
-min-height: 500px;
-}
-
-.premium-image-wrapper {
-padding: 50px 70px !important;
-}
-
-.who_are_we_images .premium-image {
-max-height: 480px;
-height: auto;
-}
+/* Second section photo — только тонкая настройка если нужно */
 }
 
 /* =============================================================
 BREAKPOINT: 1200-1919px (Средние экраны)
 ============================================================= */
 @media (min-width: 1200px) and (max-width: 1919px) {
-/* Second section photo на средних — меньше отступы, картинка больше */
-.who_are_we_images {
-min-height: 480px;
-}
-
-.premium-image-wrapper {
-padding: 30px 40px !important;
-}
-
-.who_are_we_images .premium-image {
-max-height: 450px;
-height: auto;
-}
+/* Second section photo — clamp() в базовых стилях уже адаптивен */
 }
 
 /* =============================================================
@@ -1085,20 +1061,6 @@ padding-right: 1.2rem !important;
 .language_links.premium-lang-header a,
 .language_links.premium-lang-header span {
 font-size: 1rem !important;
-}
-
-/* Second section photo on 2K — чуть меньше, больше отступы */
-.who_are_we_images {
-min-height: 550px;
-}
-
-.premium-image-wrapper {
-padding: 60px 100px !important;
-}
-
-.who_are_we_images .premium-image {
-max-height: 500px;
-height: auto;
 }
 }
 
@@ -1167,25 +1129,11 @@ padding-right: 1.8rem !important;
 .language_links.premium-lang-header span {
 font-size: 1.4rem !important;
 }
-
-/* Second section photo on 4K — МЕНЬШАЯ КАРТИНКА, БОЛЬШИЕ ОТСТУПЫ */
-.who_are_we_images {
-min-height: 600px;
-}
-
-.premium-image-wrapper {
-padding: 80px 120px !important;
-}
-
-.who_are_we_images .premium-image {
-max-height: 550px;
-height: auto;
-}
 }
 
 /* =============================================================
-   UTILITY
-   ============================================================= */
+UTILITY
+============================================================= */
 .accent-text {
     color: var(--accent, #b68a52);
 }
