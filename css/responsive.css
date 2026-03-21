@@ -986,135 +986,201 @@ max-height: 400px;
 }
 
 /* =============================================================
-   BREAKPOINT: ≥ 2560px (2K / Ultra Wide)
-   ============================================================= */
-@media (min-width: 2560px) {
-    .first_section {
-        padding-top: 25vh !important;
-    }
+BREAKPOINT: 1920-2559px (Full HD)
+============================================================= */
+@media (min-width: 1920px) and (max-width: 2559px) {
+/* Second section photo на Full HD — чуть меньше, чуть больше отступы */
+.who_are_we_images {
+min-height: 500px;
+}
 
-    .first_title h1,
-    .header .first_section .first_title h1 {
-        font-size: clamp(5rem, 4vw, 7rem) !important;
-        margin-bottom: 3rem !important;
-    }
+.premium-image-wrapper {
+padding: 50px 70px !important;
+}
 
-    .trust-bar {
-        gap: 3rem !important;
-        padding: 2.5rem 0 !important;
-        margin: 3.5rem 0 4rem !important;
-    }
-
-    .trust-item .number {
-        font-size: clamp(3.5rem, 3vw, 5rem) !important;
-    }
-
-    .trust-item .label {
-        font-size: clamp(1rem, 0.8vw, 1.3rem) !important;
-        margin-top: 10px;
-    }
-
-    .communication_button a,
-    .btn-premium {
-        font-size: 1.2rem !important;
-        padding: 22px 60px !important;
-        min-width: 280px;
-    }
-
-    .scrolling span {
-        font-size: 1rem;
-    }
-    
-    /* Navbar scaling for 2K */
-    .premium-logo-icon img {
-        width: 50px !important;
-    }
-    
-    .premium-logo-title {
-        font-size: 1.3rem !important;
-    }
-    
-    .premium-logo-subtitle {
-        font-size: 0.85rem !important;
-    }
-
-    .navbar-nav .nav-link {
-        font-size: 1rem !important;
-        padding-left: 1.2rem !important;
-        padding-right: 1.2rem !important;
-    }
-
-    .language_links.premium-lang-header a,
-    .language_links.premium-lang-header span {
-        font-size: 1rem !important;
-    }
+.who_are_we_images .premium-image {
+max-height: 480px;
+height: auto;
+}
 }
 
 /* =============================================================
-   BREAKPOINT: ≥ 3840px (4K Monitors)
-   ============================================================= */
+BREAKPOINT: 1200-1919px (Средние экраны)
+============================================================= */
+@media (min-width: 1200px) and (max-width: 1919px) {
+/* Second section photo на средних — меньше отступы, картинка больше */
+.who_are_we_images {
+min-height: 480px;
+}
+
+.premium-image-wrapper {
+padding: 30px 40px !important;
+}
+
+.who_are_we_images .premium-image {
+max-height: 450px;
+height: auto;
+}
+}
+
+/* =============================================================
+BREAKPOINT: ≥ 2560px (2K / Ultra Wide)
+============================================================= */
+@media (min-width: 2560px) {
+.first_section {
+padding-top: 25vh !important;
+}
+
+.first_title h1,
+.header .first_section .first_title h1 {
+font-size: clamp(5rem, 4vw, 7rem) !important;
+margin-bottom: 3rem !important;
+}
+
+.trust-bar {
+gap: 3rem !important;
+padding: 2.5rem 0 !important;
+margin: 3.5rem 0 4rem !important;
+}
+
+.trust-item .number {
+font-size: clamp(3.5rem, 3vw, 5rem) !important;
+}
+
+.trust-item .label {
+font-size: clamp(1rem, 0.8vw, 1.3rem) !important;
+margin-top: 10px;
+}
+
+.communication_button a,
+.btn-premium {
+font-size: 1.2rem !important;
+padding: 22px 60px !important;
+min-width: 280px;
+}
+
+.scrolling span {
+font-size: 1rem;
+}
+
+/* Navbar scaling for 2K */
+.premium-logo-icon img {
+width: 50px !important;
+}
+
+.premium-logo-title {
+font-size: 1.3rem !important;
+}
+
+.premium-logo-subtitle {
+font-size: 0.85rem !important;
+}
+
+.navbar-nav .nav-link {
+font-size: 1rem !important;
+padding-left: 1.2rem !important;
+padding-right: 1.2rem !important;
+}
+
+.language_links.premium-lang-header a,
+.language_links.premium-lang-header span {
+font-size: 1rem !important;
+}
+
+/* Second section photo on 2K — чуть меньше, больше отступы */
+.who_are_we_images {
+min-height: 550px;
+}
+
+.premium-image-wrapper {
+padding: 60px 100px !important;
+}
+
+.who_are_we_images .premium-image {
+max-height: 500px;
+height: auto;
+}
+}
+
+/* =============================================================
+BREAKPOINT: ≥ 3840px (4K Monitors)
+============================================================= */
 @media (min-width: 3840px) {
-    .first_section {
-        padding-top: 28vh !important;
-    }
+.first_section {
+padding-top: 28vh !important;
+}
 
-    .first_title h1,
-    .header .first_section .first_title h1 {
-        font-size: clamp(7rem, 5vw, 10rem) !important;
-        margin-bottom: 4rem !important;
-    }
+.first_title h1,
+.header .first_section .first_title h1 {
+font-size: clamp(7rem, 5vw, 10rem) !important;
+margin-bottom: 4rem !important;
+}
 
-    .trust-bar {
-        gap: 4rem !important;
-        padding: 3rem 0 !important;
-        margin: 4rem 0 5rem !important;
-        border-top: 2px solid rgba(182, 138, 82, 0.3);
-        border-bottom: 2px solid rgba(182, 138, 82, 0.3);
-    }
+.trust-bar {
+gap: 4rem !important;
+padding: 3rem 0 !important;
+margin: 4rem 0 5rem !important;
+border-top: 2px solid rgba(182, 138, 82, 0.3);
+border-bottom: 2px solid rgba(182, 138, 82, 0.3);
+}
 
-    .trust-item .number {
-        font-size: clamp(5rem, 4vw, 7rem) !important;
-    }
+.trust-item .number {
+font-size: clamp(5rem, 4vw, 7rem) !important;
+}
 
-    .trust-item .label {
-        font-size: clamp(1.4rem, 1vw, 1.8rem) !important;
-        margin-top: 15px;
-    }
+.trust-item .label {
+font-size: clamp(1.4rem, 1vw, 1.8rem) !important;
+margin-top: 15px;
+}
 
-    .communication_button a,
-    .btn-premium {
-        font-size: 1.6rem !important;
-        padding: 30px 80px !important;
-        min-width: 360px;
-    }
+.communication_button a,
+.btn-premium {
+font-size: 1.6rem !important;
+padding: 30px 80px !important;
+min-width: 360px;
+}
 
-    .scrolling span {
-        font-size: 1.3rem;
-    }
+.scrolling span {
+font-size: 1.3rem;
+}
 
-    /* Navbar scaling for 4K */
-    .premium-logo-icon img {
-        width: 70px !important;
-    }
-    
-    .premium-logo-title {
-        font-size: 1.8rem !important;
-    }
-    
-    .premium-logo-subtitle {
-        font-size: 1.2rem !important;
-    }
+/* Navbar scaling for 4K */
+.premium-logo-icon img {
+width: 70px !important;
+}
 
-    .navbar-nav .nav-link {
-        font-size: 1.4rem !important;
-        padding-left: 1.8rem !important;
-        padding-right: 1.8rem !important;
-    }
+.premium-logo-title {
+font-size: 1.8rem !important;
+}
 
-    .language_links.premium-lang-header a,
-    .language_links.premium-lang-header span {
-        font-size: 1.4rem !important;
-    }
+.premium-logo-subtitle {
+font-size: 1.2rem !important;
+}
+
+.navbar-nav .nav-link {
+font-size: 1.4rem !important;
+padding-left: 1.8rem !important;
+padding-right: 1.8rem !important;
+}
+
+.language_links.premium-lang-header a,
+.language_links.premium-lang-header span {
+font-size: 1.4rem !important;
+}
+
+/* Second section photo on 4K — МЕНЬШАЯ КАРТИНКА, БОЛЬШИЕ ОТСТУПЫ */
+.who_are_we_images {
+min-height: 600px;
+}
+
+.premium-image-wrapper {
+padding: 80px 120px !important;
+}
+
+.who_are_we_images .premium-image {
+max-height: 550px;
+height: auto;
+}
 }
 
 /* =============================================================
