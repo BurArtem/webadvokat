@@ -123,19 +123,47 @@ iframe {
 /* =============================================================
    HERO SECTION — no black gap
    ============================================================= */
+/* =============================================================
+HERO SECTION — Photo positioning and scaling
+============================================================= */
 .first_section {
-    flex: 1;
-    display: flex;
-    align-items: flex-start;
-    min-height: 80vh;
-    padding-top: 150px !important;
-    padding-bottom: 80px !important;
-    margin-top: 0 !important;
-    background-image:
-        linear-gradient(to right, rgba(17, 17, 17, 0.97) 0%, rgba(17, 17, 17, 0.82) 50%, rgba(17, 17, 17, 0.55) 100%),
-        url('../img/Work.jpg');
-    background-size: cover;
-    background-position: center center;
+flex: 1;
+display: flex;
+align-items: flex-start;
+min-height: 80vh;
+padding-top: 150px !important;
+padding-bottom: 80px !important;
+margin-top: 0 !important;
+background-image:
+linear-gradient(to right, rgba(17, 17, 17, 0.97) 0%, rgba(17, 17, 17, 0.82) 50%, rgba(17, 17, 17, 0.55) 100%),
+url('../img/Work.jpg');
+background-size: cover;
+background-position: center center;
+}
+
+/* Hero photo container — прижат к правому краю */
+.hero-photo-container {
+position: absolute;
+right: 0;
+bottom: 0;
+top: 0;
+height: 100%;
+width: clamp(300px, 40vw, 50vw);
+display: flex;
+align-items: flex-end;
+justify-content: flex-end;
+z-index: 0;
+pointer-events: none;
+}
+
+/* Hero photo — адаптивная ширина, "едет" справа налево при сжатии */
+.hero-photo {
+width: auto;
+height: 100%;
+min-height: 100vh;
+max-width: none;
+object-fit: contain;
+object-position: bottom right;
 }
 
 .first_section .container {
@@ -205,17 +233,6 @@ iframe {
     letter-spacing: 1px;
     color: var(--text-muted, #a0a0a0);
     margin-top: 6px;
-}
-
-/* Scroll indicator */
-.scrolling {
-    position: static !important;
-    margin-top: 3rem !important;
-    margin-bottom: 0 !important;
-    transform: none !important;
-    left: auto !important;
-    text-align: left;
-    opacity: 0.7;
 }
 
 /* CTA button: moved lower */

@@ -318,7 +318,7 @@ width: auto;
 height: 100%;
 min-height: 100vh;
 object-fit: contain;
-object-position: bottom center;
+object-position: bottom right;
 filter: drop-shadow(-30px 0 60px rgba(0, 0, 0, 0.5));
 }
 
