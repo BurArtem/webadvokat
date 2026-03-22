@@ -756,6 +756,13 @@ BREAKPOINT: ≤ 768px (Tablet Portrait) - Blurred background
     padding-right: 0 !important;
   }
 
+  .first_title h1,
+  .header .first_section .first_title h1 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
   /* Trust bar centered on mobile */
   .trust-bar {
     justify-content: center !important;
@@ -1103,40 +1110,46 @@ BREAKPOINT: ≥ 2560px (2K / Ultra Wide)
     padding-top: 25vh !important;
   }
 
-  /* Fix hero photo positioning for 2K */
+  /* Fix hero photo positioning for 2K - exactly as 2559px */
   .hero-photo-container {
-    right: 5% !important;
-    width: 45% !important;
-    max-width: 900px !important;
-    top: 0 !important;
-    height: 100% !important;
+    right: 0 !important;
+    width: auto !important;
+    top: 80px !important;
+    height: calc(100% - 80px) !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: flex-end !important;
   }
 
   .hero-photo {
     height: 100% !important;
     width: auto !important;
-    max-width: 100% !important;
-    transform: translateX(0) scale(1) !important;
+    max-width: none !important;
+    transform: translateX(25%) scale(1.12) translateY(-5%) !important;
     object-position: right bottom !important;
+    object-fit: contain !important;
   }
 
-  /* Ensure text doesn't overlap with photo */
+  /* Text block - exactly as 2559px, no constraints */
   .first_title {
-    padding-left: 5% !important;
-    padding-right: 50% !important;
-    max-width: 100% !important;
+    padding-left: clamp(3rem, 6vw, 8rem) !important;
+    max-width: 55% !important;
   }
 
   .first_title h1,
   .header .first_section .first_title h1 {
-    font-size: clamp(4rem, 3.5vw, 6rem) !important;
-    margin-bottom: 3rem !important;
+    font-size: clamp(3rem, 2.5vw, 4rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 2rem !important;
   }
 
+  /* Trust bar - allow wrapping like at 2559px */
   .trust-bar {
     gap: 3rem !important;
     padding: 2.5rem 0 !important;
     margin: 3.5rem 0 4rem !important;
+    flex-wrap: wrap !important;
+    max-width: max-content !important;
   }
 
   .trust-item .number {
