@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вибір теми - Адвокатське бюро «Бур'янський і партнери»</title>
+    <link rel="shortcut icon" href="img/scales.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #1c1917 0%, #0f0e0d 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #b68a52 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #a8a29e;
+            margin-bottom: 50px;
+        }
+
+        .themes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .theme-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(182, 138, 82, 0.2);
+            border-radius: 16px;
+            padding: 40px 30px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .theme-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #b68a52 0%, #d4af37 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .theme-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(182, 138, 82, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .theme-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .theme-card.dark .theme-icon {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border: 2px solid #b68a52;
+        }
+
+        .theme-card.light .theme-icon {
+            background: linear-gradient(135deg, #fafaf9 0%, #f5f5f4 100%);
+            border: 2px solid #b68a52;
+            color: #1c1917;
+        }
+
+        .theme-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .theme-description {
+            font-size: 0.95rem;
+            color: #a8a29e;
+            line-height: 1.6;
+        }
+
+        .preview-badge {
+            display: inline-block;
+            background: rgba(182, 138, 82, 0.2);
+            color: #b68a52;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-note {
+            margin-top: 50px;
+            color: #57534e;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .themes-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .theme-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="img/scales_gold.png" alt="Весы правосудия">
+        </div>
+
+        <h1>Адвокатське бюро</h1>
+        <p class="subtitle">«Бур'янський і партнери» — Оберіть варіант дизайну</p>
+
+        <div class="themes-grid">
+            <!-- Dark Theme -->
+            <a href="index.html" class="theme-card dark">
+                <div class="theme-icon">🌙</div>
+                <h2 class="theme-title">Темна тема</h2>
+                <p class="theme-description">
+                    Класичний преміальний дизайн з темним фоном та золотими акцентами. 
+                    Стильний, сучасний вигляд для юридичного бюро.
+                </p>
+                <span class="preview-badge">Дивитися темну версію →</span>
+            </a>
+
+            <!-- Light Theme -->
+            <a href="index_light.html" class="theme-card light">
+                <div class="theme-icon">☀️</div>
+                <h2 class="theme-title">Світла тема</h2>
+                <p class="theme-description">
+                    Свіжий елегантний дизайн зі світлим фоном та золотими акцентами. 
+                    Престижний, дорогий вигляд для юридичних послуг.
+                </p>
+                <span class="preview-badge">Дивитися світлу версію →</span>
+            </a>
+        </div>
+
+        <p class="footer-note">
+            Обидві версії адаптовані для мобільних пристроїв та десктопів
+        </p>
+    </div>
+</body>
+</html>
