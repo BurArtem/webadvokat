@@ -1,0 +1,612 @@
+/* ==========================================================================
+   PREMIUM LIGHT THEME - Юридическое бюро (Светлая тема)
+   Элегантный, дорогой, престижный дизайн
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CSS VARIABLES - Light Theme Overrides
+   -------------------------------------------------------------------------- */
+.light-theme {
+    --bg-light-primary: #fafaf9;
+    --bg-light-secondary: #ffffff;
+    --bg-light-alt: #f5f5f4;
+    --bg-light-card: #ffffff;
+    --text-light-dark: #1c1917;
+    --text-light-muted: #57534e;
+    --text-light-secondary: #78716c;
+    --border-light: #e7e5e4;
+    --border-light-hover: #d6d3d1;
+    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-light-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+    --shadow-light-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
+}
+
+/* --------------------------------------------------------------------------
+   BASE OVERRIDES for Light Sections
+   -------------------------------------------------------------------------- */
+.light-section,
+.light-section-alt {
+    background-color: var(--bg-light-primary);
+    color: var(--text-light-dark);
+}
+
+.light-section-alt {
+    background-color: var(--bg-light-alt);
+}
+
+.light-section h2,
+.light-section-alt h2 {
+    color: var(--text-light-dark);
+}
+
+.light-section h2::after,
+.light-section-alt h2::after {
+    background: var(--accent);
+}
+
+.light-section p,
+.light-section-alt p {
+    color: var(--text-light-muted);
+}
+
+.light-text-dark {
+    color: var(--text-light-dark) !important;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2: ХТО МИ? (Who We Are)
+   -------------------------------------------------------------------------- */
+.light-section.second_section {
+    background: linear-gradient(180deg, var(--bg-light-primary) 0%, var(--bg-light-alt) 100%);
+    padding: 120px 0;
+}
+
+.light-section.second_section .premium-heading {
+    color: var(--text-light-dark);
+    font-weight: 700;
+}
+
+.light-section.second_section .accent-text {
+    color: var(--accent);
+}
+
+.light-image-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-light-xl);
+    border: 1px solid var(--border-light);
+    transition: all 0.4s ease;
+}
+
+.light-image-wrapper:hover {
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3: SERVICES GRID (Чіткі рішення)
+   -------------------------------------------------------------------------- */
+.light-section.third_section {
+    background: var(--bg-light-secondary);
+    padding: 120px 0;
+}
+
+.light-section.third_section .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.light-card {
+    background: var(--bg-light-card);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.light-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.light-card:hover {
+    box-shadow: var(--shadow-light-lg);
+    transform: translateY(-8px);
+    border-color: var(--border-light-hover);
+}
+
+.light-card:hover::before {
+    transform: scaleX(1);
+}
+
+.light-card .service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(182, 138, 82, 0.1) 0%, rgba(182, 138, 82, 0.05) 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.light-card:hover .service-icon {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+}
+
+.light-card .service-icon svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    transition: stroke 0.3s ease;
+}
+
+.light-card:hover .service-icon svg {
+    stroke: #ffffff;
+}
+
+.light-card h3 {
+    color: var(--text-light-dark);
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.light-card p {
+    color: var(--text-light-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.light-card .service-link {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 1.5rem;
+    display: inline-block;
+    position: relative;
+}
+
+.light-card .service-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.light-card:hover .service-link::after {
+    width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4: ЧОМУ МИ? (Features Grid)
+   -------------------------------------------------------------------------- */
+.light-section-alt.fourth_section {
+    background: linear-gradient(135deg, var(--bg-light-alt) 0%, #ebeae8 100%);
+    padding: 120px 0;
+    position: relative;
+}
+
+.light-section-alt.fourth_section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--border-light) 50%, transparent 100%);
+}
+
+.light-feature {
+    background: var(--bg-light-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.light-feature::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--accent);
+    transition: width 0.4s ease;
+}
+
+.light-feature:hover {
+    box-shadow: var(--shadow-light-lg);
+    transform: translateY(-5px);
+    border-color: var(--border-light-hover);
+}
+
+.light-feature:hover::after {
+    width: 60%;
+}
+
+.light-feature .feature-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, rgba(182, 138, 82, 0.08) 0%, rgba(182, 138, 82, 0.03) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.light-feature:hover .feature-icon {
+    background: linear-gradient(135deg, rgba(182, 138, 82, 0.15) 0%, rgba(182, 138, 82, 0.05) 100%);
+    border-color: rgba(182, 138, 82, 0.2);
+}
+
+.light-feature .feature-icon svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+}
+
+.light-feature .feature-title {
+    color: var(--text-light-dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 5: ВІДГУКИ (Reviews)
+   -------------------------------------------------------------------------- */
+.light-section.fifth_section {
+    background: var(--bg-light-primary);
+    padding: 120px 0;
+}
+
+.light-review {
+    background: var(--bg-light-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-light);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.light-review::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: rgba(182, 138, 82, 0.08);
+    line-height: 1;
+}
+
+.light-review:hover {
+    box-shadow: var(--shadow-light-lg);
+    transform: translateY(-5px);
+    border-color: var(--border-light-hover);
+}
+
+.light-review .review-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--bg-light-card);
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+.light-review .review-author {
+    color: var(--text-light-dark);
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.light-review .review-stars {
+    color: var(--accent);
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+}
+
+.light-review .review-text {
+    color: var(--text-light-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 6: CONTACT FORM
+   -------------------------------------------------------------------------- */
+.light-section-alt.sixth_section {
+    background: linear-gradient(180deg, var(--bg-light-alt) 0%, #e8e6e3 100%);
+    padding: 120px 0;
+}
+
+.light-form {
+    background: var(--bg-light-card);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: var(--shadow-light-lg);
+}
+
+.light-form-floating {
+    position: relative;
+}
+
+.light-input {
+    background-color: var(--bg-light-alt) !important;
+    border: 2px solid var(--border-light) !important;
+    border-radius: 8px !important;
+    color: var(--text-light-dark) !important;
+    padding: 1rem 1rem !important;
+    height: calc(3.5rem + 2px) !important;
+    transition: all 0.3s ease !important;
+}
+
+.light-input:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px rgba(182, 138, 82, 0.1) !important;
+    background-color: var(--bg-light-card) !important;
+}
+
+.light-form-floating label {
+    color: var(--text-light-secondary);
+    padding: 1rem 1rem;
+}
+
+.light-form-floating>.light-input:focus~label,
+.light-form-floating>.light-input:not(:placeholder-shown)~label {
+    color: var(--accent) !important;
+    background-color: var(--bg-light-card) !important;
+    transform: scale(.85) translateY(-1rem) translateX(0.15rem);
+}
+
+.light-privacy-link {
+    color: var(--text-light-secondary);
+}
+
+.light-privacy-link:hover {
+    color: var(--accent);
+}
+
+/* Submit button in light theme */
+.light-section-alt .btn-premium {
+    background: linear-gradient(135deg, var(--accent) 0%, #c9a063 100%);
+    color: #ffffff !important;
+    border: none;
+}
+
+.light-section-alt .btn-premium:hover {
+    background: linear-gradient(135deg, #c9a063 0%, var(--accent) 100%);
+    box-shadow: 0 10px 30px rgba(182, 138, 82, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER - Light Theme
+   -------------------------------------------------------------------------- */
+.light-footer {
+    background: linear-gradient(180deg, #1c1917 0%, #0f0e0d 100%);
+    padding: 5rem 0 2rem;
+    border-top: none;
+}
+
+.light-footer-heading {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.light-footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+.light-footer-text {
+    color: #a8a29e;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.light-footer-text a {
+    color: #a8a29e;
+    transition: color 0.3s;
+}
+
+.light-footer-text a:hover {
+    color: var(--accent);
+}
+
+.light-social-icon {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #a8a29e;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    text-decoration: none !important;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.light-social-icon:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(182, 138, 82, 0.08);
+}
+
+.light-map-wrapper {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    min-height: 400px;
+    filter: grayscale(30%) contrast(110%);
+    transition: filter 0.5s ease;
+}
+
+.light-map-wrapper:hover {
+    filter: grayscale(0%) contrast(100%);
+}
+
+.light-copyright-text {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE ADJUSTMENTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+    .light-section,
+    .light-section-alt {
+        padding: 80px 0 !important;
+    }
+    
+    .light-card {
+        padding: 1.75rem;
+    }
+    
+    .light-feature {
+        padding: 2rem 1.25rem;
+    }
+    
+    .light-form {
+        padding: 2rem;
+    }
+    
+    .light-section.third_section .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .light-card {
+        padding: 1.5rem;
+    }
+    
+    .light-card .service-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .light-card .service-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .light-feature .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .light-review {
+        padding: 1.5rem;
+    }
+    
+    .light-form {
+        padding: 1.5rem;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   SMOOTH SCROLLBAR for Light Theme
+   -------------------------------------------------------------------------- */
+.light-theme ::-webkit-scrollbar {
+    width: 10px;
+}
+
+.light-theme ::-webkit-scrollbar-track {
+    background: var(--bg-light-alt);
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+    background: #d6d3d1;
+    border-radius: 5px;
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   ENHANCED ANIMATIONS
+   -------------------------------------------------------------------------- */
+.light-card,
+.light-feature,
+.light-review {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.light-card:nth-child(1) { animation-delay: 0.1s; }
+.light-card:nth-child(2) { animation-delay: 0.15s; }
+.light-card:nth-child(3) { animation-delay: 0.2s; }
+.light-card:nth-child(4) { animation-delay: 0.25s; }
+.light-card:nth-child(5) { animation-delay: 0.3s; }
+.light-card:nth-child(6) { animation-delay: 0.35s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Premium selection color */
+.light-theme ::selection {
+    background: rgba(182, 138, 82, 0.2);
+    color: var(--text-light-dark);
+}
